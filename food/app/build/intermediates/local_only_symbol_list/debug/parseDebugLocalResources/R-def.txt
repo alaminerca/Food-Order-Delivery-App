@@ -1,0 +1,27 @@
+R_DEF: Internal format may change without notice
+local
+color black
+color white
+drawable ic_cart
+drawable ic_launcher_background
+drawable ic_launcher_foreground
+drawable ic_menu
+drawable ic_orders
+id bottom_navigation
+id fragment_container
+id menu_recycler_view
+id navigation_cart
+id navigation_menu
+id navigation_orders
+layout activity_main
+layout fragment_cart
+layout fragment_menu
+layout fragment_orders
+menu bottom_navigation_menu
+mipmap ic_launcher
+mipmap ic_launcher_round
+string app_name
+style Base.Theme.FoodOrderApp
+style Theme.FoodOrderApp
+xml backup_rules
+xml data_extraction_rules
