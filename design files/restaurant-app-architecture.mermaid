@@ -1,0 +1,98 @@
+classDiagram
+    class MainActivity {
+        +BottomNavigationView navigation
+        +setupNavigation()
+    }
+
+    class MenuFragment {
+        -MenuViewModel viewModel
+        -RecyclerView menuList
+        +onCreateView()
+        +displayMenu()
+    }
+
+    class OrderFragment {
+        -OrderViewModel viewModel
+        -RecyclerView cartItems
+        +onCreateView()
+        +placeOrder()
+    }
+
+    class AdminFragment {
+        -AdminViewModel viewModel
+        +onCreateView()
+        +manageMenu()
+        +manageOrders()
+    }
+
+    class MenuViewModel {
+        -MenuRepository repository
+        +getAllItems()
+        +addMenuItem()
+        +updateMenuItem()
+        +deleteMenuItem()
+    }
+
+    class OrderViewModel {
+        -OrderRepository repository
+        +placeOrder()
+        +getOrders()
+        +updateOrderStatus()
+    }
+
+    class MenuItem {
+        -String id
+        -String name
+        -double price
+        -String description
+        -String imageUrl
+        +getters()
+        +setters()
+    }
+
+    class Order {
+        -String id
+        -String userId
+        -List~MenuItem~ items
+        -OrderStatus status
+        -String address
+        +getters()
+        +setters()
+    }
+
+    class MenuRepository {
+        -FirebaseDatabase firebaseDb
+        -SQLiteDatabase localDb
+        +syncData()
+        +saveMenuItem()
+        +fetchMenuItems()
+    }
+
+    class OrderRepository {
+        -FirebaseDatabase firebaseDb
+        -SQLiteDatabase localDb
+        +syncOrders()
+        +saveOrder()
+        +fetchOrders()
+    }
+
+    class LocalDatabase {
+        +getMenuItems()
+        +saveMenuItem()
+        +getOrders()
+        +saveOrder()
+    }
+
+    MainActivity --> MenuFragment
+    MainActivity --> OrderFragment
+    MainActivity --> AdminFragment
+    MenuFragment --> MenuViewModel
+    OrderFragment --> OrderViewModel
+    AdminFragment --> MenuViewModel
+    AdminFragment --> OrderViewModel
+    MenuViewModel --> MenuRepository
+    OrderViewModel --> OrderRepository
+    MenuRepository --> MenuItem
+    OrderRepository --> Order
+    MenuRepository --> LocalDatabase
+    OrderRepository --> LocalDatabase
