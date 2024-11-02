@@ -1,0 +1,22 @@
+Project Setup:
+
+Created proper project structure with packages (activities, fragments, models, etc.)
+Fixed Gradle configuration issues
+Updated AGP (Android Gradle Plugin)
+
+
+Basic App Structure:
+
+Implemented MainActivity with bottom navigation
+Created three base fragments (Menu, Cart, Orders)
+Set up basic layouts for all fragments
+Established navigation between fragments
+
+
+
+Next day, we'll move on to:
+
+Implementing the menu items display with RecyclerView
+Setting up the database (Room/SQLite)
+Creating the food ordering functionality
+Implementing the cart system
