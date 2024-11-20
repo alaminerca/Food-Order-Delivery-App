@@ -6,16 +6,19 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.example.foodorderapp.R;
 import com.example.foodorderapp.adapters.CartAdapter;
 import com.example.foodorderapp.database.entities.CartItemEntity;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 
 public class CartFragment extends Fragment implements CartAdapter.CartItemClickListener {
@@ -23,6 +26,7 @@ public class CartFragment extends Fragment implements CartAdapter.CartItemClickL
     private CartAdapter adapter;
     private TextView totalPriceTextView;
     private Button checkoutButton;
+    private List<CartItemEntity> currentCartItems;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -53,8 +57,8 @@ public class CartFragment extends Fragment implements CartAdapter.CartItemClickL
 
         // Observe cart items
         cartViewModel.getAllCartItems().observe(getViewLifecycleOwner(), cartItems -> {
+            currentCartItems = cartItems;
             adapter.updateItems(cartItems);
-            // Enable/disable checkout button based on cart items
             checkoutButton.setEnabled(!cartItems.isEmpty());
         });
 
@@ -72,9 +76,20 @@ public class CartFragment extends Fragment implements CartAdapter.CartItemClickL
     }
 
     private void processCheckout() {
-        // We'll implement checkout functionality later
-        cartViewModel.clearCart();
+        if (currentCartItems != null && !currentCartItems.isEmpty()) {
+            Double total = cartViewModel.getCartTotal().getValue();
+            if (total != null) {
+                cartViewModel.processCheckout(currentCartItems, total);
+                Toast.makeText(getContext(), "Order placed successfully!", Toast.LENGTH_SHORT).show();
+
+                // Switch to Orders tab using BottomNavigationView
+                BottomNavigationView bottomNav = requireActivity().findViewById(R.id.bottom_navigation);
+                bottomNav.setSelectedItemId(R.id.navigation_orders);
+            }
+        }
     }
+
+
 
     // CartAdapter.CartItemClickListener implementations
     @Override

@@ -6,13 +6,19 @@ import androidx.room.Room;
 import androidx.room.RoomDatabase;
 import com.example.foodorderapp.database.DAO.MenuItemDAO;
 import com.example.foodorderapp.database.DAO.CartDAO;
-import com.example.foodorderapp.database.entities.MenuItemEntity;
-import com.example.foodorderapp.database.entities.CartItemEntity;
+import com.example.foodorderapp.database.DAO.OrderDAO;
+import com.example.foodorderapp.database.entities.*;
 
-@Database(entities = {MenuItemEntity.class, CartItemEntity.class}, version = 1)
+@Database(entities = {
+        MenuItemEntity.class,
+        CartItemEntity.class,
+        OrderEntity.class,
+        OrderItemEntity.class},
+        version = 1)
 public abstract class AppDatabase extends RoomDatabase {
     public abstract MenuItemDAO menuItemDAO();
-    public abstract CartDAO cartDAO();  // Make sure this matches the case in CartRepository
+    public abstract CartDAO cartDAO();
+    public abstract OrderDAO orderDAO();
 
     private static volatile AppDatabase INSTANCE;
 

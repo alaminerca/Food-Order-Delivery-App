@@ -2981,10 +2981,12 @@ drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
+drawable ic_add
 drawable ic_arrow_back_black_24
 drawable ic_cart
 drawable ic_clear_black_24
 drawable ic_clock_black_24dp
+drawable ic_delete
 drawable ic_keyboard_black_24dp
 drawable ic_launcher_background
 drawable ic_launcher_foreground
@@ -2997,6 +2999,7 @@ drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
 drawable ic_orders
+drawable ic_remove
 drawable ic_search_black_24
 drawable m3_avd_hide_password
 drawable m3_avd_show_password
@@ -3143,6 +3146,7 @@ id action_text
 id actions
 id activity_chooser_view_content
 id add
+id add_to_cart_button
 id alertTitle
 id aligned
 id all
@@ -3171,11 +3175,18 @@ id bounce
 id bounceBoth
 id bounceEnd
 id bounceStart
+id btn_decrease
+id btn_increase
+id btn_remove
 id buttonPanel
 id cache_measures
 id callMeasure
 id cancel_button
 id carryVelocity
+id cart_item_name
+id cart_item_price
+id cart_item_quantity
+id cart_recycler_view
 id center
 id centerCrop
 id centerInside
@@ -3186,6 +3197,7 @@ id chain2
 id chains
 id checkbox
 id checked
+id checkout_button
 id chronometer
 id circle_center
 id clear_text
@@ -3267,6 +3279,10 @@ id fitXY
 id fixed
 id flip
 id floating
+id food_description
+id food_image
+id food_name
+id food_price
 id forever
 id fragment_container
 id fragment_container_view_tag
@@ -3390,6 +3406,7 @@ id neverCompleteToEnd
 id neverCompleteToStart
 id noScroll
 id noState
+id no_orders_text
 id none
 id normal
 id north
@@ -3413,6 +3430,11 @@ id open_search_view_search_prefix
 id open_search_view_status_bar_spacer
 id open_search_view_toolbar
 id open_search_view_toolbar_container
+id order_date
+id order_id
+id order_status
+id order_total
+id orders_recycler_view
 id outline
 id outward
 id overshoot
@@ -3543,6 +3565,7 @@ id title_template
 id toggle
 id top
 id topPanel
+id total_price
 id touch_outside
 id transitionToEnd
 id transitionToStart
@@ -3709,6 +3732,9 @@ layout design_text_input_start_icon
 layout fragment_cart
 layout fragment_menu
 layout fragment_orders
+layout item_cart
+layout item_menu
+layout item_order
 layout m3_alert_dialog
 layout m3_alert_dialog_actions
 layout m3_alert_dialog_title
