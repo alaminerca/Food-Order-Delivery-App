@@ -3154,10 +3154,8 @@ int id action_text 0x7f080043
 int id actions 0x7f080044
 int id activity_chooser_view_content 0x7f080045
 int id add 0x7f080046
-int id add_hangout_checkbox 0x7f080047
 int id add_to_cart_button 0x7f080048
-int id admin_bottom_navigation 0x7f080049
-int id admin_fragment_container 0x7f08004a
+int id address_section 0x7f080228
 int id alertTitle 0x7f08004b
 int id aligned 0x7f08004c
 int id all 0x7f08004d
@@ -3313,7 +3311,6 @@ int id graph_wrap 0x7f0800e2
 int id group_divider 0x7f0800e3
 int id grouping 0x7f0800e4
 int id groups 0x7f0800e5
-int id hangout_address_section 0x7f0800e6
 int id header_title 0x7f0800e7
 int id hideable 0x7f0800e8
 int id home 0x7f0800e9
@@ -3499,6 +3496,10 @@ int id right 0x7f08019c
 int id rightToLeft 0x7f08019d
 int id right_icon 0x7f08019e
 int id right_side 0x7f08019f
+int id role_admin 0x7f080229
+int id role_customer 0x7f08022a
+int id role_delivery 0x7f08022b
+int id role_group 0x7f08022c
 int id rounded 0x7f0801a0
 int id row_index_key 0x7f0801a1
 int id save_non_transition_alpha 0x7f0801a2

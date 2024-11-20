@@ -19,10 +19,8 @@ drawable ic_orders
 drawable ic_orders_manage
 drawable ic_remove
 drawable ic_users_manage
-id add_hangout_checkbox
 id add_to_cart_button
-id admin_bottom_navigation
-id admin_fragment_container
+id address_section
 id bottom_navigation
 id btn_decrease
 id btn_increase
@@ -42,7 +40,6 @@ id food_image
 id food_name
 id food_price
 id fragment_container
-id hangout_address_section
 id item_description_input
 id item_name_input
 id item_price_input
@@ -70,6 +67,10 @@ id password_input
 id phone_input
 id register_button
 id register_link
+id role_admin
+id role_customer
+id role_delivery
+id role_group
 id state_input
 id street_input
 id total_price

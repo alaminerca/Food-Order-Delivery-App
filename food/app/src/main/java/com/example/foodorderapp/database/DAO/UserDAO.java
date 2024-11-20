@@ -16,12 +16,12 @@ public interface UserDAO {
     @Update
     void update(UserEntity user);
 
-    @Query("SELECT * FROM users WHERE email = :email LIMIT 1")
-    LiveData<UserEntity> getUserByEmail(String email);
+    @Query("SELECT * FROM users WHERE email = :email AND password = :password")
+    UserEntity login(String email, String password);
 
-    @Query("SELECT * FROM users WHERE email = :email AND password = :password LIMIT 1")
-    LiveData<UserEntity> login(String email, String password);
+    @Query("SELECT * FROM users WHERE email = :email")
+    UserEntity getUserByEmail(String email);
 
-    @Query("SELECT * FROM users WHERE role = :role")
-    LiveData<List<UserEntity>> getUsersByRole(String role);
+    @Query("SELECT * FROM users")
+    List<UserEntity> getAllUsers();  // Add this query
 }

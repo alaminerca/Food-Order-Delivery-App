@@ -15,7 +15,6 @@
     <uses-permission android:name="com.example.foodorderapp.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
 
     <application
-        android:name="com.example.foodorderapp.FoodOrderApp"
         android:allowBackup="true"
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
         android:debuggable="true"
@@ -36,10 +35,13 @@
             </intent-filter>
         </activity>
         <activity
+            android:name="com.example.foodorderapp.activities.MainActivity"
+            android:exported="false" />
+        <activity
             android:name="com.example.foodorderapp.activities.RegisterActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.foodorderapp.activities.MainActivity"
+            android:name="com.example.foodorderapp.activities.AdminActivity"
             android:exported="false" />
 
         <service

@@ -3155,10 +3155,8 @@ id action_text
 id actions
 id activity_chooser_view_content
 id add
-id add_hangout_checkbox
 id add_to_cart_button
-id admin_bottom_navigation
-id admin_fragment_container
+id address_section
 id alertTitle
 id aligned
 id all
@@ -3314,7 +3312,6 @@ id graph_wrap
 id group_divider
 id grouping
 id groups
-id hangout_address_section
 id header_title
 id hideable
 id home
@@ -3500,6 +3497,10 @@ id right
 id rightToLeft
 id right_icon
 id right_side
+id role_admin
+id role_customer
+id role_delivery
+id role_group
 id rounded
 id row_index_key
 id save_non_transition_alpha
