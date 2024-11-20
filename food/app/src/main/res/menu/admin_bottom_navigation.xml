@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_manage_menu"
+        android:icon="@drawable/ic_menu_manage"
+        android:title="Manage Menu" />
+    <item
+        android:id="@+id/nav_manage_orders"
+        android:icon="@drawable/ic_orders_manage"
+        android:title="Manage Orders" />
+    <item
+        android:id="@+id/nav_manage_users"
+        android:icon="@drawable/ic_users_manage"
+        android:title="Manage Users" />
+</menu>

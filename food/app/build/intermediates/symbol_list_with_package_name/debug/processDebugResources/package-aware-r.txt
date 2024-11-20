@@ -2076,6 +2076,9 @@ color primary_text_default_material_dark
 color primary_text_default_material_light
 color primary_text_disabled_material_dark
 color primary_text_disabled_material_light
+color purple_200
+color purple_500
+color purple_700
 color ripple_material_dark
 color ripple_material_light
 color secondary_text_default_material_dark
@@ -2088,6 +2091,8 @@ color switch_thumb_material_dark
 color switch_thumb_material_light
 color switch_thumb_normal_material_dark
 color switch_thumb_normal_material_light
+color teal_200
+color teal_700
 color tooltip_background_dark
 color tooltip_background_light
 color white
@@ -2987,6 +2992,7 @@ drawable ic_cart
 drawable ic_clear_black_24
 drawable ic_clock_black_24dp
 drawable ic_delete
+drawable ic_edit
 drawable ic_keyboard_black_24dp
 drawable ic_launcher_background
 drawable ic_launcher_foreground
@@ -2994,13 +3000,16 @@ drawable ic_m3_chip_check
 drawable ic_m3_chip_checked_circle
 drawable ic_m3_chip_close
 drawable ic_menu
+drawable ic_menu_manage
 drawable ic_mtrl_checked_circle
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
 drawable ic_orders
+drawable ic_orders_manage
 drawable ic_remove
 drawable ic_search_black_24
+drawable ic_users_manage
 drawable m3_avd_hide_password
 drawable m3_avd_show_password
 drawable m3_bottom_sheet_drag_handle
@@ -3146,7 +3155,10 @@ id action_text
 id actions
 id activity_chooser_view_content
 id add
+id add_hangout_checkbox
 id add_to_cart_button
+id admin_bottom_navigation
+id admin_fragment_container
 id alertTitle
 id aligned
 id all
@@ -3179,6 +3191,8 @@ id btn_decrease
 id btn_increase
 id btn_remove
 id buttonPanel
+id button_delete
+id button_edit
 id cache_measures
 id callMeasure
 id cancel_button
@@ -3200,6 +3214,7 @@ id checked
 id checkout_button
 id chronometer
 id circle_center
+id city_input
 id clear_text
 id clip_horizontal
 id clip_vertical
@@ -3258,6 +3273,7 @@ id east
 id edge
 id edit_query
 id elastic
+id email_input
 id embed
 id end
 id endToStart
@@ -3266,6 +3282,7 @@ id enterAlwaysCollapsed
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
+id fab_add_menu_item
 id fade
 id fill
 id fill_horizontal
@@ -3297,6 +3314,7 @@ id graph_wrap
 id group_divider
 id grouping
 id groups
+id hangout_address_section
 id header_title
 id hideable
 id home
@@ -3317,6 +3335,9 @@ id invisible
 id inward
 id is_pooling_container_tag
 id italic
+id item_description_input
+id item_name_input
+id item_price_input
 id item_touch_helper_previous_elevation
 id jumpToEnd
 id jumpToStart
@@ -3330,6 +3351,8 @@ id line3
 id linear
 id listMode
 id list_item
+id login_button
+id login_link
 id m3_side_sheet
 id marquee
 id masked
@@ -3356,6 +3379,10 @@ id material_timepicker_ok_button
 id material_timepicker_view
 id material_value_index
 id matrix
+id menu_item_description
+id menu_item_name
+id menu_item_price
+id menu_items_recycler
 id menu_recycler_view
 id message
 id middle
@@ -3391,6 +3418,10 @@ id mtrl_picker_text_input_range_start
 id mtrl_picker_title_text
 id mtrl_view_tag_bottom_padding
 id multiply
+id name_input
+id nav_manage_menu
+id nav_manage_orders
+id nav_manage_users
 id navigation_bar_item_active_indicator_view
 id navigation_bar_item_icon_container
 id navigation_bar_item_icon_view
@@ -3444,11 +3475,13 @@ id parent
 id parentPanel
 id parentRelative
 id parent_matrix
+id password_input
 id password_toggle
 id path
 id pathRelative
 id peekHeight
 id percent
+id phone_input
 id pin
 id pooling_container_listener_holder_tag
 id position
@@ -3459,6 +3492,8 @@ id progress_horizontal
 id radio
 id ratio
 id rectangles
+id register_button
+id register_link
 id report_drawn
 id reverseSawtooth
 id right
@@ -3521,9 +3556,11 @@ id start
 id startHorizontal
 id startToEnd
 id startVertical
+id state_input
 id staticLayout
 id staticPostLayout
 id stop
+id street_input
 id stretch
 id submenuarrow
 id submit_area
@@ -3598,6 +3635,7 @@ id wrap_content
 id wrap_content_constrained
 id x_left
 id x_right
+id zip_input
 integer abc_config_activityDefaultDur
 integer abc_config_activityShortDur
 integer app_bar_elevation_anim_duration
@@ -3712,7 +3750,10 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_admin
+layout activity_login
 layout activity_main
+layout activity_register
 layout custom_dialog
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
@@ -3729,10 +3770,15 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
+layout dialog_add_menu_item
 layout fragment_cart
+layout fragment_manage_menu
+layout fragment_manage_orders
+layout fragment_manage_users
 layout fragment_menu
 layout fragment_orders
 layout item_cart
+layout item_manage_menu
 layout item_menu
 layout item_order
 layout m3_alert_dialog
@@ -3796,6 +3842,7 @@ layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
+menu admin_bottom_navigation
 menu bottom_navigation_menu
 mipmap ic_launcher
 mipmap ic_launcher_round

@@ -20,7 +20,7 @@
 15-->[androidx.core:core:1.9.0] C:\Users\alami\.gradle\caches\transforms-4\ad7c6790a1c2eb35680a21a9545466d9\transformed\core-1.9.0\AndroidManifest.xml:26:22-94
 16
 17    <application
-17-->C:\Users\alami\Desktop\JavaProjects\Food-Order-Delivery-App\food\app\src\main\AndroidManifest.xml:5:5-22:19
+17-->C:\Users\alami\Desktop\JavaProjects\Food-Order-Delivery-App\food\app\src\main\AndroidManifest.xml:5:5-31:19
 18        android:name="com.example.foodorderapp.FoodOrderApp"
 18-->C:\Users\alami\Desktop\JavaProjects\Food-Order-Delivery-App\food\app\src\main\AndroidManifest.xml:6:9-37
 19        android:allowBackup="true"
@@ -42,8 +42,8 @@
 28-->C:\Users\alami\Desktop\JavaProjects\Food-Order-Delivery-App\food\app\src\main\AndroidManifest.xml:12:9-67
 29        <activity
 29-->C:\Users\alami\Desktop\JavaProjects\Food-Order-Delivery-App\food\app\src\main\AndroidManifest.xml:14:9-21:20
-30            android:name="com.example.foodorderapp.activities.MainActivity"
-30-->C:\Users\alami\Desktop\JavaProjects\Food-Order-Delivery-App\food\app\src\main\AndroidManifest.xml:15:13-52
+30            android:name="com.example.foodorderapp.activities.LoginActivity"
+30-->C:\Users\alami\Desktop\JavaProjects\Food-Order-Delivery-App\food\app\src\main\AndroidManifest.xml:15:13-53
 31            android:exported="true" >
 31-->C:\Users\alami\Desktop\JavaProjects\Food-Order-Delivery-App\food\app\src\main\AndroidManifest.xml:16:13-36
 32            <intent-filter>
@@ -57,81 +57,93 @@
 35-->C:\Users\alami\Desktop\JavaProjects\Food-Order-Delivery-App\food\app\src\main\AndroidManifest.xml:19:27-74
 36            </intent-filter>
 37        </activity>
-38
-39        <service
-39-->[androidx.room:room-runtime:2.6.1] C:\Users\alami\.gradle\caches\transforms-4\f1d915d22f1d78f093a689face494e8e\transformed\room-runtime-2.6.1\AndroidManifest.xml:24:9-28:63
-40            android:name="androidx.room.MultiInstanceInvalidationService"
-40-->[androidx.room:room-runtime:2.6.1] C:\Users\alami\.gradle\caches\transforms-4\f1d915d22f1d78f093a689face494e8e\transformed\room-runtime-2.6.1\AndroidManifest.xml:25:13-74
-41            android:directBootAware="true"
-41-->[androidx.room:room-runtime:2.6.1] C:\Users\alami\.gradle\caches\transforms-4\f1d915d22f1d78f093a689face494e8e\transformed\room-runtime-2.6.1\AndroidManifest.xml:26:13-43
-42            android:exported="false" />
-42-->[androidx.room:room-runtime:2.6.1] C:\Users\alami\.gradle\caches\transforms-4\f1d915d22f1d78f093a689face494e8e\transformed\room-runtime-2.6.1\AndroidManifest.xml:27:13-37
-43
-44        <provider
-44-->[androidx.emoji2:emoji2:1.2.0] C:\Users\alami\.gradle\caches\transforms-4\b55e50ba8d8f0cb96790bc6dcd6bf172\transformed\emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
-45            android:name="androidx.startup.InitializationProvider"
-45-->[androidx.emoji2:emoji2:1.2.0] C:\Users\alami\.gradle\caches\transforms-4\b55e50ba8d8f0cb96790bc6dcd6bf172\transformed\emoji2-1.2.0\AndroidManifest.xml:25:13-67
-46            android:authorities="com.example.foodorderapp.androidx-startup"
-46-->[androidx.emoji2:emoji2:1.2.0] C:\Users\alami\.gradle\caches\transforms-4\b55e50ba8d8f0cb96790bc6dcd6bf172\transformed\emoji2-1.2.0\AndroidManifest.xml:26:13-68
-47            android:exported="false" >
-47-->[androidx.emoji2:emoji2:1.2.0] C:\Users\alami\.gradle\caches\transforms-4\b55e50ba8d8f0cb96790bc6dcd6bf172\transformed\emoji2-1.2.0\AndroidManifest.xml:27:13-37
-48            <meta-data
-48-->[androidx.emoji2:emoji2:1.2.0] C:\Users\alami\.gradle\caches\transforms-4\b55e50ba8d8f0cb96790bc6dcd6bf172\transformed\emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
-49                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-49-->[androidx.emoji2:emoji2:1.2.0] C:\Users\alami\.gradle\caches\transforms-4\b55e50ba8d8f0cb96790bc6dcd6bf172\transformed\emoji2-1.2.0\AndroidManifest.xml:30:17-75
-50                android:value="androidx.startup" />
-50-->[androidx.emoji2:emoji2:1.2.0] C:\Users\alami\.gradle\caches\transforms-4\b55e50ba8d8f0cb96790bc6dcd6bf172\transformed\emoji2-1.2.0\AndroidManifest.xml:31:17-49
-51            <meta-data
-51-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\alami\.gradle\caches\transforms-4\ff303bb1273ee4fe072369c49f96490c\transformed\lifecycle-process-2.7.0\AndroidManifest.xml:29:13-31:52
-52                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-52-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\alami\.gradle\caches\transforms-4\ff303bb1273ee4fe072369c49f96490c\transformed\lifecycle-process-2.7.0\AndroidManifest.xml:30:17-78
-53                android:value="androidx.startup" />
-53-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\alami\.gradle\caches\transforms-4\ff303bb1273ee4fe072369c49f96490c\transformed\lifecycle-process-2.7.0\AndroidManifest.xml:31:17-49
+38        <activity
+38-->C:\Users\alami\Desktop\JavaProjects\Food-Order-Delivery-App\food\app\src\main\AndroidManifest.xml:23:9-25:39
+39            android:name="com.example.foodorderapp.activities.RegisterActivity"
+39-->C:\Users\alami\Desktop\JavaProjects\Food-Order-Delivery-App\food\app\src\main\AndroidManifest.xml:24:13-56
+40            android:exported="false" />
+40-->C:\Users\alami\Desktop\JavaProjects\Food-Order-Delivery-App\food\app\src\main\AndroidManifest.xml:25:13-37
+41        <activity
+41-->C:\Users\alami\Desktop\JavaProjects\Food-Order-Delivery-App\food\app\src\main\AndroidManifest.xml:27:9-29:39
+42            android:name="com.example.foodorderapp.activities.MainActivity"
+42-->C:\Users\alami\Desktop\JavaProjects\Food-Order-Delivery-App\food\app\src\main\AndroidManifest.xml:28:13-52
+43            android:exported="false" />
+43-->C:\Users\alami\Desktop\JavaProjects\Food-Order-Delivery-App\food\app\src\main\AndroidManifest.xml:29:13-37
+44
+45        <service
+45-->[androidx.room:room-runtime:2.6.1] C:\Users\alami\.gradle\caches\transforms-4\f1d915d22f1d78f093a689face494e8e\transformed\room-runtime-2.6.1\AndroidManifest.xml:24:9-28:63
+46            android:name="androidx.room.MultiInstanceInvalidationService"
+46-->[androidx.room:room-runtime:2.6.1] C:\Users\alami\.gradle\caches\transforms-4\f1d915d22f1d78f093a689face494e8e\transformed\room-runtime-2.6.1\AndroidManifest.xml:25:13-74
+47            android:directBootAware="true"
+47-->[androidx.room:room-runtime:2.6.1] C:\Users\alami\.gradle\caches\transforms-4\f1d915d22f1d78f093a689face494e8e\transformed\room-runtime-2.6.1\AndroidManifest.xml:26:13-43
+48            android:exported="false" />
+48-->[androidx.room:room-runtime:2.6.1] C:\Users\alami\.gradle\caches\transforms-4\f1d915d22f1d78f093a689face494e8e\transformed\room-runtime-2.6.1\AndroidManifest.xml:27:13-37
+49
+50        <provider
+50-->[androidx.emoji2:emoji2:1.2.0] C:\Users\alami\.gradle\caches\transforms-4\b55e50ba8d8f0cb96790bc6dcd6bf172\transformed\emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
+51            android:name="androidx.startup.InitializationProvider"
+51-->[androidx.emoji2:emoji2:1.2.0] C:\Users\alami\.gradle\caches\transforms-4\b55e50ba8d8f0cb96790bc6dcd6bf172\transformed\emoji2-1.2.0\AndroidManifest.xml:25:13-67
+52            android:authorities="com.example.foodorderapp.androidx-startup"
+52-->[androidx.emoji2:emoji2:1.2.0] C:\Users\alami\.gradle\caches\transforms-4\b55e50ba8d8f0cb96790bc6dcd6bf172\transformed\emoji2-1.2.0\AndroidManifest.xml:26:13-68
+53            android:exported="false" >
+53-->[androidx.emoji2:emoji2:1.2.0] C:\Users\alami\.gradle\caches\transforms-4\b55e50ba8d8f0cb96790bc6dcd6bf172\transformed\emoji2-1.2.0\AndroidManifest.xml:27:13-37
 54            <meta-data
-54-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\alami\.gradle\caches\transforms-4\88fdfff5d65bebac7a54ed7bbc484598\transformed\profileinstaller-1.3.0\AndroidManifest.xml:29:13-31:52
-55                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
-55-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\alami\.gradle\caches\transforms-4\88fdfff5d65bebac7a54ed7bbc484598\transformed\profileinstaller-1.3.0\AndroidManifest.xml:30:17-85
+54-->[androidx.emoji2:emoji2:1.2.0] C:\Users\alami\.gradle\caches\transforms-4\b55e50ba8d8f0cb96790bc6dcd6bf172\transformed\emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
+55                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+55-->[androidx.emoji2:emoji2:1.2.0] C:\Users\alami\.gradle\caches\transforms-4\b55e50ba8d8f0cb96790bc6dcd6bf172\transformed\emoji2-1.2.0\AndroidManifest.xml:30:17-75
 56                android:value="androidx.startup" />
-56-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\alami\.gradle\caches\transforms-4\88fdfff5d65bebac7a54ed7bbc484598\transformed\profileinstaller-1.3.0\AndroidManifest.xml:31:17-49
-57        </provider>
-58
-59        <receiver
-59-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\alami\.gradle\caches\transforms-4\88fdfff5d65bebac7a54ed7bbc484598\transformed\profileinstaller-1.3.0\AndroidManifest.xml:34:9-52:20
-60            android:name="androidx.profileinstaller.ProfileInstallReceiver"
-60-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\alami\.gradle\caches\transforms-4\88fdfff5d65bebac7a54ed7bbc484598\transformed\profileinstaller-1.3.0\AndroidManifest.xml:35:13-76
-61            android:directBootAware="false"
-61-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\alami\.gradle\caches\transforms-4\88fdfff5d65bebac7a54ed7bbc484598\transformed\profileinstaller-1.3.0\AndroidManifest.xml:36:13-44
-62            android:enabled="true"
-62-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\alami\.gradle\caches\transforms-4\88fdfff5d65bebac7a54ed7bbc484598\transformed\profileinstaller-1.3.0\AndroidManifest.xml:37:13-35
-63            android:exported="true"
-63-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\alami\.gradle\caches\transforms-4\88fdfff5d65bebac7a54ed7bbc484598\transformed\profileinstaller-1.3.0\AndroidManifest.xml:38:13-36
-64            android:permission="android.permission.DUMP" >
-64-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\alami\.gradle\caches\transforms-4\88fdfff5d65bebac7a54ed7bbc484598\transformed\profileinstaller-1.3.0\AndroidManifest.xml:39:13-57
-65            <intent-filter>
-65-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\alami\.gradle\caches\transforms-4\88fdfff5d65bebac7a54ed7bbc484598\transformed\profileinstaller-1.3.0\AndroidManifest.xml:40:13-42:29
-66                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
-66-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\alami\.gradle\caches\transforms-4\88fdfff5d65bebac7a54ed7bbc484598\transformed\profileinstaller-1.3.0\AndroidManifest.xml:41:17-91
-66-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\alami\.gradle\caches\transforms-4\88fdfff5d65bebac7a54ed7bbc484598\transformed\profileinstaller-1.3.0\AndroidManifest.xml:41:25-88
-67            </intent-filter>
-68            <intent-filter>
-68-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\alami\.gradle\caches\transforms-4\88fdfff5d65bebac7a54ed7bbc484598\transformed\profileinstaller-1.3.0\AndroidManifest.xml:43:13-45:29
-69                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
-69-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\alami\.gradle\caches\transforms-4\88fdfff5d65bebac7a54ed7bbc484598\transformed\profileinstaller-1.3.0\AndroidManifest.xml:44:17-85
-69-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\alami\.gradle\caches\transforms-4\88fdfff5d65bebac7a54ed7bbc484598\transformed\profileinstaller-1.3.0\AndroidManifest.xml:44:25-82
-70            </intent-filter>
+56-->[androidx.emoji2:emoji2:1.2.0] C:\Users\alami\.gradle\caches\transforms-4\b55e50ba8d8f0cb96790bc6dcd6bf172\transformed\emoji2-1.2.0\AndroidManifest.xml:31:17-49
+57            <meta-data
+57-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\alami\.gradle\caches\transforms-4\ff303bb1273ee4fe072369c49f96490c\transformed\lifecycle-process-2.7.0\AndroidManifest.xml:29:13-31:52
+58                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+58-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\alami\.gradle\caches\transforms-4\ff303bb1273ee4fe072369c49f96490c\transformed\lifecycle-process-2.7.0\AndroidManifest.xml:30:17-78
+59                android:value="androidx.startup" />
+59-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\alami\.gradle\caches\transforms-4\ff303bb1273ee4fe072369c49f96490c\transformed\lifecycle-process-2.7.0\AndroidManifest.xml:31:17-49
+60            <meta-data
+60-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\alami\.gradle\caches\transforms-4\88fdfff5d65bebac7a54ed7bbc484598\transformed\profileinstaller-1.3.0\AndroidManifest.xml:29:13-31:52
+61                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+61-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\alami\.gradle\caches\transforms-4\88fdfff5d65bebac7a54ed7bbc484598\transformed\profileinstaller-1.3.0\AndroidManifest.xml:30:17-85
+62                android:value="androidx.startup" />
+62-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\alami\.gradle\caches\transforms-4\88fdfff5d65bebac7a54ed7bbc484598\transformed\profileinstaller-1.3.0\AndroidManifest.xml:31:17-49
+63        </provider>
+64
+65        <receiver
+65-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\alami\.gradle\caches\transforms-4\88fdfff5d65bebac7a54ed7bbc484598\transformed\profileinstaller-1.3.0\AndroidManifest.xml:34:9-52:20
+66            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+66-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\alami\.gradle\caches\transforms-4\88fdfff5d65bebac7a54ed7bbc484598\transformed\profileinstaller-1.3.0\AndroidManifest.xml:35:13-76
+67            android:directBootAware="false"
+67-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\alami\.gradle\caches\transforms-4\88fdfff5d65bebac7a54ed7bbc484598\transformed\profileinstaller-1.3.0\AndroidManifest.xml:36:13-44
+68            android:enabled="true"
+68-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\alami\.gradle\caches\transforms-4\88fdfff5d65bebac7a54ed7bbc484598\transformed\profileinstaller-1.3.0\AndroidManifest.xml:37:13-35
+69            android:exported="true"
+69-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\alami\.gradle\caches\transforms-4\88fdfff5d65bebac7a54ed7bbc484598\transformed\profileinstaller-1.3.0\AndroidManifest.xml:38:13-36
+70            android:permission="android.permission.DUMP" >
+70-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\alami\.gradle\caches\transforms-4\88fdfff5d65bebac7a54ed7bbc484598\transformed\profileinstaller-1.3.0\AndroidManifest.xml:39:13-57
 71            <intent-filter>
-71-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\alami\.gradle\caches\transforms-4\88fdfff5d65bebac7a54ed7bbc484598\transformed\profileinstaller-1.3.0\AndroidManifest.xml:46:13-48:29
-72                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
-72-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\alami\.gradle\caches\transforms-4\88fdfff5d65bebac7a54ed7bbc484598\transformed\profileinstaller-1.3.0\AndroidManifest.xml:47:17-88
-72-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\alami\.gradle\caches\transforms-4\88fdfff5d65bebac7a54ed7bbc484598\transformed\profileinstaller-1.3.0\AndroidManifest.xml:47:25-85
+71-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\alami\.gradle\caches\transforms-4\88fdfff5d65bebac7a54ed7bbc484598\transformed\profileinstaller-1.3.0\AndroidManifest.xml:40:13-42:29
+72                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+72-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\alami\.gradle\caches\transforms-4\88fdfff5d65bebac7a54ed7bbc484598\transformed\profileinstaller-1.3.0\AndroidManifest.xml:41:17-91
+72-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\alami\.gradle\caches\transforms-4\88fdfff5d65bebac7a54ed7bbc484598\transformed\profileinstaller-1.3.0\AndroidManifest.xml:41:25-88
 73            </intent-filter>
 74            <intent-filter>
-74-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\alami\.gradle\caches\transforms-4\88fdfff5d65bebac7a54ed7bbc484598\transformed\profileinstaller-1.3.0\AndroidManifest.xml:49:13-51:29
-75                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
-75-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\alami\.gradle\caches\transforms-4\88fdfff5d65bebac7a54ed7bbc484598\transformed\profileinstaller-1.3.0\AndroidManifest.xml:50:17-95
-75-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\alami\.gradle\caches\transforms-4\88fdfff5d65bebac7a54ed7bbc484598\transformed\profileinstaller-1.3.0\AndroidManifest.xml:50:25-92
+74-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\alami\.gradle\caches\transforms-4\88fdfff5d65bebac7a54ed7bbc484598\transformed\profileinstaller-1.3.0\AndroidManifest.xml:43:13-45:29
+75                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+75-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\alami\.gradle\caches\transforms-4\88fdfff5d65bebac7a54ed7bbc484598\transformed\profileinstaller-1.3.0\AndroidManifest.xml:44:17-85
+75-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\alami\.gradle\caches\transforms-4\88fdfff5d65bebac7a54ed7bbc484598\transformed\profileinstaller-1.3.0\AndroidManifest.xml:44:25-82
 76            </intent-filter>
-77        </receiver>
-78    </application>
-79
-80</manifest>
+77            <intent-filter>
+77-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\alami\.gradle\caches\transforms-4\88fdfff5d65bebac7a54ed7bbc484598\transformed\profileinstaller-1.3.0\AndroidManifest.xml:46:13-48:29
+78                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+78-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\alami\.gradle\caches\transforms-4\88fdfff5d65bebac7a54ed7bbc484598\transformed\profileinstaller-1.3.0\AndroidManifest.xml:47:17-88
+78-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\alami\.gradle\caches\transforms-4\88fdfff5d65bebac7a54ed7bbc484598\transformed\profileinstaller-1.3.0\AndroidManifest.xml:47:25-85
+79            </intent-filter>
+80            <intent-filter>
+80-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\alami\.gradle\caches\transforms-4\88fdfff5d65bebac7a54ed7bbc484598\transformed\profileinstaller-1.3.0\AndroidManifest.xml:49:13-51:29
+81                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+81-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\alami\.gradle\caches\transforms-4\88fdfff5d65bebac7a54ed7bbc484598\transformed\profileinstaller-1.3.0\AndroidManifest.xml:50:17-95
+81-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\alami\.gradle\caches\transforms-4\88fdfff5d65bebac7a54ed7bbc484598\transformed\profileinstaller-1.3.0\AndroidManifest.xml:50:25-92
+82            </intent-filter>
+83        </receiver>
+84    </application>
+85
+86</manifest>

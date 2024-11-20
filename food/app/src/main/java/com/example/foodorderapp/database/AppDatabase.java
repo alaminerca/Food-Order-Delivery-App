@@ -4,21 +4,23 @@ import android.content.Context;
 import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
-import com.example.foodorderapp.database.DAO.MenuItemDAO;
-import com.example.foodorderapp.database.DAO.CartDAO;
-import com.example.foodorderapp.database.DAO.OrderDAO;
+import com.example.foodorderapp.database.DAO.*;
 import com.example.foodorderapp.database.entities.*;
 
 @Database(entities = {
         MenuItemEntity.class,
         CartItemEntity.class,
         OrderEntity.class,
-        OrderItemEntity.class},
-        version = 1)
+        OrderItemEntity.class,
+        UserEntity.class,
+        AddressEntity.class
+}, version = 1)
 public abstract class AppDatabase extends RoomDatabase {
     public abstract MenuItemDAO menuItemDAO();
     public abstract CartDAO cartDAO();
     public abstract OrderDAO orderDAO();
+    public abstract UserDAO userDAO();
+    public abstract AddressDAO addressDAO();
 
     private static volatile AppDatabase INSTANCE;
 
@@ -30,6 +32,7 @@ public abstract class AppDatabase extends RoomDatabase {
                                     context.getApplicationContext(),
                                     AppDatabase.class,
                                     "food_order_db")
+                            .fallbackToDestructiveMigration()
                             .build();
                 }
             }

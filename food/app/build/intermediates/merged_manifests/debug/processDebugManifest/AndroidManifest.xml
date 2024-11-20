@@ -27,7 +27,7 @@
         android:testOnly="true"
         android:theme="@style/Theme.AppCompat.Light.DarkActionBar" >
         <activity
-            android:name="com.example.foodorderapp.activities.MainActivity"
+            android:name="com.example.foodorderapp.activities.LoginActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -35,6 +35,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.example.foodorderapp.activities.RegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.foodorderapp.activities.MainActivity"
+            android:exported="false" />
 
         <service
             android:name="androidx.room.MultiInstanceInvalidationService"
