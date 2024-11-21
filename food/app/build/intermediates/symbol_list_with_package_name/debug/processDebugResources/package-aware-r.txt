@@ -3009,7 +3009,7 @@ drawable ic_orders
 drawable ic_orders_manage
 drawable ic_remove
 drawable ic_search_black_24
-drawable ic_users_manage
+drawable ic_users
 drawable m3_avd_hide_password
 drawable m3_avd_show_password
 drawable m3_bottom_sheet_drag_handle
@@ -3157,6 +3157,8 @@ id activity_chooser_view_content
 id add
 id add_to_cart_button
 id address_section
+id admin_bottom_navigation
+id admin_fragment_container
 id alertTitle
 id aligned
 id all

@@ -3008,7 +3008,7 @@ int drawable ic_orders 0x7f07009a
 int drawable ic_orders_manage 0x7f07009b
 int drawable ic_remove 0x7f07009c
 int drawable ic_search_black_24 0x7f07009d
-int drawable ic_users_manage 0x7f07009e
+int drawable ic_users 0x7f0700e9
 int drawable m3_avd_hide_password 0x7f07009f
 int drawable m3_avd_show_password 0x7f0700a0
 int drawable m3_bottom_sheet_drag_handle 0x7f0700a1
@@ -3156,6 +3156,8 @@ int id activity_chooser_view_content 0x7f080045
 int id add 0x7f080046
 int id add_to_cart_button 0x7f080048
 int id address_section 0x7f080228
+int id admin_bottom_navigation 0x7f080049
+int id admin_fragment_container 0x7f08004a
 int id alertTitle 0x7f08004b
 int id aligned 0x7f08004c
 int id all 0x7f08004d

@@ -18,9 +18,11 @@ drawable ic_menu_manage
 drawable ic_orders
 drawable ic_orders_manage
 drawable ic_remove
-drawable ic_users_manage
+drawable ic_users
 id add_to_cart_button
 id address_section
+id admin_bottom_navigation
+id admin_fragment_container
 id bottom_navigation
 id btn_decrease
 id btn_increase

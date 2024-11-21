@@ -3,13 +3,13 @@
     <item
         android:id="@+id/nav_manage_menu"
         android:icon="@drawable/ic_menu_manage"
-        android:title="Manage Menu" />
+        android:title="Menu"/>
     <item
         android:id="@+id/nav_manage_orders"
-        android:icon="@drawable/ic_orders_manage"
-        android:title="Manage Orders" />
+        android:icon="@drawable/ic_orders"
+        android:title="Orders"/>
     <item
         android:id="@+id/nav_manage_users"
-        android:icon="@drawable/ic_users_manage"
-        android:title="Manage Users" />
+        android:icon="@drawable/ic_users"
+        android:title="Users"/>
 </menu>
