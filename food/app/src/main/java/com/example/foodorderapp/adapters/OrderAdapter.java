@@ -18,16 +18,18 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHol
     private List<OrderEntity> orders;
     private final OrderActionListener listener;
     private final SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm", Locale.getDefault());
+    private final boolean isAdminView;
 
     public interface OrderActionListener {
         void onAcceptOrder(OrderEntity order);
-        void onAssignDelivery(OrderEntity order);
+        void onPayOrder(OrderEntity order);
         void onMarkDelivered(OrderEntity order);
     }
 
-    public OrderAdapter(List<OrderEntity> orders, OrderActionListener listener) {
+    public OrderAdapter(List<OrderEntity> orders, OrderActionListener listener, boolean isAdminView) {
         this.orders = orders;
         this.listener = listener;
+        this.isAdminView = isAdminView;
     }
 
     @NonNull
@@ -75,10 +77,21 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHol
             orderStatus.setText(order.getStatus());
             orderAmount.setText(String.format(Locale.getDefault(), "$%.2f", order.getTotalAmount()));
 
+            actionButton.setVisibility(View.VISIBLE);
+
+            if (isAdminView) {
+                setupAdminActions(order);
+            } else {
+                setupCustomerActions(order);
+            }
+        }
+
+        private void setupAdminActions(OrderEntity order) {
             switch (order.getStatus()) {
                 case "PENDING":
                     if (order.isPaid()) {
                         actionButton.setText("Accept Order");
+                        actionButton.setEnabled(true);
                         actionButton.setOnClickListener(v -> listener.onAcceptOrder(order));
                     } else {
                         actionButton.setText("Awaiting Payment");
@@ -86,17 +99,24 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHol
                     }
                     break;
                 case "ACCEPTED":
-                    actionButton.setText("Assign Delivery");
-                    actionButton.setOnClickListener(v -> listener.onAssignDelivery(order));
-                    break;
-                case "ASSIGNED":
                     actionButton.setText("Mark Delivered");
+                    actionButton.setEnabled(true);
                     actionButton.setOnClickListener(v -> listener.onMarkDelivered(order));
                     break;
                 case "DELIVERED":
                     actionButton.setText("Completed");
                     actionButton.setEnabled(false);
                     break;
+            }
+        }
+
+        private void setupCustomerActions(OrderEntity order) {
+            if (!order.isPaid() && "PENDING".equals(order.getStatus())) {
+                actionButton.setText("Pay Now");
+                actionButton.setEnabled(true);
+                actionButton.setOnClickListener(v -> listener.onPayOrder(order));
+            } else {
+                actionButton.setVisibility(View.GONE);
             }
         }
     }

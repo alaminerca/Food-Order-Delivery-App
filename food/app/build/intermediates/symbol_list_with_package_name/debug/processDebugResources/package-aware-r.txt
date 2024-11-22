@@ -3005,6 +3005,7 @@ drawable ic_mtrl_checked_circle
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
+drawable ic_notification
 drawable ic_orders
 drawable ic_orders_manage
 drawable ic_remove
@@ -3290,6 +3291,9 @@ id fill
 id fill_horizontal
 id fill_vertical
 id filled
+id filter_accepted
+id filter_all
+id filter_pending
 id fitCenter
 id fitEnd
 id fitStart
@@ -3464,6 +3468,7 @@ id open_search_view_toolbar
 id open_search_view_toolbar_container
 id order_amount
 id order_date
+id order_filter_group
 id order_id
 id order_status
 id orders_recycler_view

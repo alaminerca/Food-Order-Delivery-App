@@ -3004,6 +3004,7 @@ int drawable ic_mtrl_checked_circle 0x7f070096
 int drawable ic_mtrl_chip_checked_black 0x7f070097
 int drawable ic_mtrl_chip_checked_circle 0x7f070098
 int drawable ic_mtrl_chip_close_circle 0x7f070099
+int drawable ic_notification 0x7f0700e9
 int drawable ic_orders 0x7f07009a
 int drawable ic_orders_manage 0x7f07009b
 int drawable ic_remove 0x7f07009c
@@ -3289,6 +3290,9 @@ int id fill 0x7f0800ca
 int id fill_horizontal 0x7f0800cb
 int id fill_vertical 0x7f0800cc
 int id filled 0x7f0800cd
+int id filter_accepted 0x7f08022d
+int id filter_all 0x7f08022e
+int id filter_pending 0x7f08022f
 int id fitCenter 0x7f0800ce
 int id fitEnd 0x7f0800cf
 int id fitStart 0x7f0800d0
@@ -3463,6 +3467,7 @@ int id open_search_view_toolbar 0x7f080178
 int id open_search_view_toolbar_container 0x7f080179
 int id order_amount 0x7f08017a
 int id order_date 0x7f08017b
+int id order_filter_group 0x7f080230
 int id order_id 0x7f08017c
 int id order_status 0x7f08017d
 int id orders_recycler_view 0x7f08017e

@@ -19,4 +19,29 @@ public class OrdersViewModel extends AndroidViewModel {
         // TODO: Get actual user ID from session management
         return repository.getOrdersByUser(1);
     }
+
+    public void simulatePayment(int orderId, OrdersFragment.PaymentCallback callback) {
+        repository.updateOrderStatus(orderId, "PENDING", new OrderRepository.OrderCallback() {
+            @Override
+            public void onSuccess(int orderId) {
+                // After status update, update payment status
+                repository.markOrderAsPaid(orderId, new OrderRepository.OrderCallback() {
+                    @Override
+                    public void onSuccess(int orderId) {
+                        callback.onSuccess();
+                    }
+
+                    @Override
+                    public void onError(String message) {
+                        callback.onError(message);
+                    }
+                });
+            }
+
+            @Override
+            public void onError(String message) {
+                callback.onError(message);
+            }
+        });
+    }
 }

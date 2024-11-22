@@ -19,30 +19,16 @@ public class ManageOrdersViewModel extends AndroidViewModel {
         return repository.getAllOrders();
     }
 
-    public void updateOrderStatus(int orderId, String status) {
+    public void updateOrderStatus(int orderId, String status, ManageOrdersFragment.OrderUpdateCallback callback) {
         repository.updateOrderStatus(orderId, status, new OrderRepository.OrderCallback() {
             @Override
             public void onSuccess(int orderId) {
-                // Status updated successfully
+                callback.onSuccess();
             }
 
             @Override
             public void onError(String message) {
-                // Handle error
-            }
-        });
-    }
-
-    public void assignDeliveryAgent(int orderId, String agentId) {
-        repository.assignDeliveryAgent(orderId, agentId, new OrderRepository.OrderCallback() {
-            @Override
-            public void onSuccess(int orderId) {
-                // Agent assigned successfully
-            }
-
-            @Override
-            public void onError(String message) {
-                // Handle error
+                callback.onError(message);
             }
         });
     }

@@ -6,11 +6,8 @@ import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Transaction;
 import androidx.room.Update;
-
 import com.example.foodorderapp.database.entities.OrderEntity;
-import com.example.foodorderapp.database.entities.OrderItemEntity;
 import java.util.List;
-
 
 @Dao
 public interface OrderDAO {
@@ -29,6 +26,6 @@ public interface OrderDAO {
     @Query("UPDATE orders SET status = :status WHERE id = :orderId")
     void updateOrderStatus(int orderId, String status);
 
-    @Query("UPDATE orders SET deliveryAgentId = :agentId, status = 'ASSIGNED' WHERE id = :orderId")
-    void assignDeliveryAgent(int orderId, String agentId);
+    @Query("UPDATE orders SET isPaid = :isPaid WHERE id = :orderId")
+    void updateOrderPaymentStatus(int orderId, boolean isPaid);
 }

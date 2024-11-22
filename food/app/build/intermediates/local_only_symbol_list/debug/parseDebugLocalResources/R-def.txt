@@ -15,6 +15,7 @@ drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable ic_menu
 drawable ic_menu_manage
+drawable ic_notification
 drawable ic_orders
 drawable ic_orders_manage
 drawable ic_remove
@@ -39,6 +40,9 @@ id city_input
 id email_input
 id empty_cart_text
 id fab_add_menu_item
+id filter_accepted
+id filter_all
+id filter_pending
 id food_description
 id food_image
 id food_name
@@ -64,6 +68,7 @@ id navigation_orders
 id no_orders_text
 id order_amount
 id order_date
+id order_filter_group
 id order_id
 id order_status
 id orders_recycler_view
