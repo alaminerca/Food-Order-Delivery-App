@@ -12,13 +12,13 @@ import java.util.List;
 @Dao
 public interface CartDAO {
     @Insert
-    void insert(CartItemEntity cartItem);
+    void insert(CartItemEntity item);
 
     @Update
-    void update(CartItemEntity cartItem);
+    void update(CartItemEntity item);
 
     @Delete
-    void delete(CartItemEntity cartItem);
+    void delete(CartItemEntity item);
 
     @Query("SELECT * FROM cart_items")
     LiveData<List<CartItemEntity>> getAllCartItems();
@@ -26,12 +26,12 @@ public interface CartDAO {
     @Query("SELECT * FROM cart_items WHERE menuItemId = :menuItemId")
     LiveData<CartItemEntity> getCartItemByMenuItemId(int menuItemId);
 
-    @Query("DELETE FROM cart_items")
-    void clearCart();
-
     @Query("SELECT SUM(quantity * pricePerItem) FROM cart_items")
     LiveData<Double> getCartTotal();
 
-    @Query("SELECT COUNT(*) FROM cart_items")
+    @Query("SELECT SUM(quantity) FROM cart_items")
     LiveData<Integer> getCartItemCount();
+
+    @Query("DELETE FROM cart_items")
+    void clearCart();
 }

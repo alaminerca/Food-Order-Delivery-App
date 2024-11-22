@@ -3142,6 +3142,7 @@ id action_bar_root
 id action_bar_spinner
 id action_bar_subtitle
 id action_bar_title
+id action_button
 id action_container
 id action_context_bar
 id action_divider
@@ -3275,6 +3276,7 @@ id edit_query
 id elastic
 id email_input
 id embed
+id empty_cart_text
 id end
 id endToStart
 id enterAlways
@@ -3460,10 +3462,10 @@ id open_search_view_search_prefix
 id open_search_view_status_bar_spacer
 id open_search_view_toolbar
 id open_search_view_toolbar_container
+id order_amount
 id order_date
 id order_id
 id order_status
-id order_total
 id orders_recycler_view
 id outline
 id outward
@@ -3782,6 +3784,7 @@ layout fragment_menu
 layout fragment_orders
 layout item_cart
 layout item_manage_menu
+layout item_manage_order
 layout item_menu
 layout item_order
 layout m3_alert_dialog

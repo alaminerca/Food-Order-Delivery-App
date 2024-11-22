@@ -14,7 +14,7 @@ import com.example.foodorderapp.database.entities.*;
         OrderItemEntity.class,
         UserEntity.class,
         AddressEntity.class
-}, version = 1)
+}, version = 2)  // Increased version number from 1 to 2
 public abstract class AppDatabase extends RoomDatabase {
     public abstract MenuItemDAO menuItemDAO();
     public abstract CartDAO cartDAO();
@@ -32,7 +32,7 @@ public abstract class AppDatabase extends RoomDatabase {
                                     context.getApplicationContext(),
                                     AppDatabase.class,
                                     "food_order_db")
-                            .fallbackToDestructiveMigration()
+                            .fallbackToDestructiveMigration()  // This will delete the database and recreate it
                             .build();
                 }
             }

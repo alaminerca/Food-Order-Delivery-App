@@ -5,25 +5,30 @@ import androidx.room.Dao;
 import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Transaction;
+import androidx.room.Update;
+
 import com.example.foodorderapp.database.entities.OrderEntity;
 import com.example.foodorderapp.database.entities.OrderItemEntity;
 import java.util.List;
 
+
 @Dao
 public interface OrderDAO {
     @Insert
-    long insertOrder(OrderEntity order);
+    long insert(OrderEntity order);
 
-    @Insert
-    void insertOrderItems(List<OrderItemEntity> orderItems);
+    @Update
+    void update(OrderEntity order);
 
-    @Transaction
     @Query("SELECT * FROM orders ORDER BY orderDate DESC")
     LiveData<List<OrderEntity>> getAllOrders();
 
-    @Query("SELECT * FROM order_items WHERE orderId = :orderId")
-    LiveData<List<OrderItemEntity>> getOrderItems(int orderId);
+    @Query("SELECT * FROM orders WHERE userId = :userId ORDER BY orderDate DESC")
+    LiveData<List<OrderEntity>> getOrdersByUser(int userId);
 
-    @Query("SELECT * FROM orders WHERE id = :orderId")
-    LiveData<OrderEntity> getOrder(int orderId);
+    @Query("UPDATE orders SET status = :status WHERE id = :orderId")
+    void updateOrderStatus(int orderId, String status);
+
+    @Query("UPDATE orders SET deliveryAgentId = :agentId, status = 'ASSIGNED' WHERE id = :orderId")
+    void assignDeliveryAgent(int orderId, String agentId);
 }

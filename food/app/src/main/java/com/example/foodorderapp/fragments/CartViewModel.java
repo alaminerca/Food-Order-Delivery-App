@@ -5,16 +5,13 @@ import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import com.example.foodorderapp.database.entities.CartItemEntity;
 import com.example.foodorderapp.database.entities.OrderEntity;
-import com.example.foodorderapp.database.entities.OrderItemEntity;
 import com.example.foodorderapp.database.repositories.CartRepository;
 import com.example.foodorderapp.database.repositories.OrderRepository;
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class CartViewModel extends AndroidViewModel {
-    private final CartRepository cartRepository;
-    private final OrderRepository orderRepository;
+    private CartRepository cartRepository;
+    private OrderRepository orderRepository;
     private final LiveData<List<CartItemEntity>> allCartItems;
     private final LiveData<Double> cartTotal;
     private final LiveData<Integer> cartItemCount;
@@ -60,27 +57,28 @@ public class CartViewModel extends AndroidViewModel {
     public void processCheckout(List<CartItemEntity> cartItems, double total) {
         // Create new order
         OrderEntity order = new OrderEntity(
+                getCurrentUserId(),
                 total,
-                new Date().getTime(),
                 "PENDING"
         );
 
-        // Convert cart items to order items
-        List<OrderItemEntity> orderItems = new ArrayList<>();
-        for (CartItemEntity cartItem : cartItems) {
-            OrderItemEntity orderItem = new OrderItemEntity(
-                    0, // orderId will be set in repository
-                    cartItem.getItemName(),
-                    cartItem.getQuantity(),
-                    cartItem.getPricePerItem()
-            );
-            orderItems.add(orderItem);
-        }
+        // Create order and handle response
+        orderRepository.createOrder(order, new OrderRepository.OrderCallback() {
+            @Override
+            public void onSuccess(int orderId) {
+                // After successful order creation, clear the cart
+                clearCart();
+            }
 
-        // Save order and items
-        orderRepository.insertOrder(order, orderItems);
+            @Override
+            public void onError(String message) {
+                // Handle order creation error
+            }
+        });
+    }
 
-        // Clear the cart
-        clearCart();
+    private int getCurrentUserId() {
+        // TODO: Implement proper user session management
+        return 1; // Temporary return for testing
     }
 }

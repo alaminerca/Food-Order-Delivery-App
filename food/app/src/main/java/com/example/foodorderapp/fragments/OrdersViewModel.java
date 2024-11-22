@@ -8,16 +8,15 @@ import com.example.foodorderapp.database.repositories.OrderRepository;
 import java.util.List;
 
 public class OrdersViewModel extends AndroidViewModel {
-    private OrderRepository repository;
-    private LiveData<List<OrderEntity>> allOrders;
+    private final OrderRepository repository;
 
     public OrdersViewModel(Application application) {
         super(application);
         repository = new OrderRepository(application);
-        allOrders = repository.getAllOrders();
     }
 
-    public LiveData<List<OrderEntity>> getAllOrders() {
-        return allOrders;
+    public LiveData<List<OrderEntity>> getUserOrders() {
+        // TODO: Get actual user ID from session management
+        return repository.getOrdersByUser(1);
     }
 }

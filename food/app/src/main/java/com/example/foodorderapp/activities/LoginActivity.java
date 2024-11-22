@@ -2,6 +2,7 @@ package com.example.foodorderapp.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -12,6 +13,7 @@ import com.example.foodorderapp.R;
 import com.example.foodorderapp.database.entities.UserEntity;
 
 public class LoginActivity extends AppCompatActivity {
+    private static final String TAG = "LoginActivity";
     private EditText emailInput;
     private EditText passwordInput;
     private Button loginButton;
@@ -21,6 +23,7 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Log.d(TAG, "onCreate called");
         setContentView(R.layout.activity_login);
 
         // Initialize views
@@ -58,10 +61,13 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void handleLoginSuccess(UserEntity user) {
+        Log.d(TAG, "Login success - User ID: " + user.getId() + ", Role: " + user.getRole());
         Intent intent;
         if ("ADMIN".equals(user.getRole())) {
+            Log.d(TAG, "Starting AdminActivity");
             intent = new Intent(this, AdminActivity.class);
         } else {
+            Log.d(TAG, "Starting MainActivity");
             intent = new Intent(this, MainActivity.class);
         }
         startActivity(intent);

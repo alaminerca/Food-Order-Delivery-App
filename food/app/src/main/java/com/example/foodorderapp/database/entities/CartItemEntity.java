@@ -2,22 +2,15 @@ package com.example.foodorderapp.database.entities;
 
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
-import androidx.room.ForeignKey;
 
-@Entity(tableName = "cart_items",
-        foreignKeys = @ForeignKey(
-                entity = MenuItemEntity.class,
-                parentColumns = "id",
-                childColumns = "menuItemId",
-                onDelete = ForeignKey.CASCADE
-        ))
+@Entity(tableName = "cart_items")
 public class CartItemEntity {
     @PrimaryKey(autoGenerate = true)
     private int id;
     private int menuItemId;
     private int quantity;
     private double pricePerItem;
-    private String itemName; // Store name for quick access
+    private String itemName;
 
     public CartItemEntity(int menuItemId, int quantity, double pricePerItem, String itemName) {
         this.menuItemId = menuItemId;
@@ -41,9 +34,4 @@ public class CartItemEntity {
 
     public String getItemName() { return itemName; }
     public void setItemName(String itemName) { this.itemName = itemName; }
-
-    // Helper method to calculate total price
-    public double getTotalPrice() {
-        return quantity * pricePerItem;
-    }
 }

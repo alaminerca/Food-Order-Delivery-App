@@ -27,10 +27,11 @@ public class UserRepository {
     }
 
     public LiveData<UserEntity> login(String email, String password) {
+        Log.d("UserRepository", "Attempting login for email: " + email);
         MutableLiveData<UserEntity> result = new MutableLiveData<>();
         executorService.execute(() -> {
             UserEntity user = userDAO.login(email, password);
-            Log.d(TAG, "Login attempt for: " + email + " - " + (user != null ? "Success" : "Failed"));
+            Log.d("UserRepository", "Login result: " + (user != null ? "Success - Role: " + user.getRole() : "Failed"));
             mainHandler.post(() -> result.setValue(user));
         });
         return result;

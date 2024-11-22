@@ -19,6 +19,7 @@ drawable ic_orders
 drawable ic_orders_manage
 drawable ic_remove
 drawable ic_users
+id action_button
 id add_to_cart_button
 id address_section
 id admin_bottom_navigation
@@ -36,6 +37,7 @@ id cart_recycler_view
 id checkout_button
 id city_input
 id email_input
+id empty_cart_text
 id fab_add_menu_item
 id food_description
 id food_image
@@ -60,10 +62,10 @@ id navigation_cart
 id navigation_menu
 id navigation_orders
 id no_orders_text
+id order_amount
 id order_date
 id order_id
 id order_status
-id order_total
 id orders_recycler_view
 id password_input
 id phone_input
@@ -90,6 +92,7 @@ layout fragment_menu
 layout fragment_orders
 layout item_cart
 layout item_manage_menu
+layout item_manage_order
 layout item_menu
 layout item_order
 menu admin_bottom_navigation
