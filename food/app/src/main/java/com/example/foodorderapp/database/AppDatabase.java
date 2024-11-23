@@ -13,14 +13,16 @@ import com.example.foodorderapp.database.entities.*;
         OrderEntity.class,
         OrderItemEntity.class,
         UserEntity.class,
-        AddressEntity.class
-}, version = 2)  // Increased version number from 1 to 2
+        AddressEntity.class,
+        DeliveryAgentEntity.class
+}, version = 4)  // Increased version for deliveryAgentId type change
 public abstract class AppDatabase extends RoomDatabase {
     public abstract MenuItemDAO menuItemDAO();
     public abstract CartDAO cartDAO();
     public abstract OrderDAO orderDAO();
     public abstract UserDAO userDAO();
     public abstract AddressDAO addressDAO();
+    public abstract DeliveryAgentDAO deliveryAgentDAO();
 
     private static volatile AppDatabase INSTANCE;
 
@@ -32,7 +34,7 @@ public abstract class AppDatabase extends RoomDatabase {
                                     context.getApplicationContext(),
                                     AppDatabase.class,
                                     "food_order_db")
-                            .fallbackToDestructiveMigration()  // This will delete the database and recreate it
+                            .fallbackToDestructiveMigration()
                             .build();
                 }
             }

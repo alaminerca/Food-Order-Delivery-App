@@ -46,6 +46,9 @@
         <activity
             android:name="com.example.foodorderapp.activities.RegisterActivity"
             android:exported="false" />
+        <activity
+            android:name="com.example.foodorderapp.activities.DeliveryActivity"
+            android:exported="false" />
 
         <service
             android:name="androidx.room.MultiInstanceInvalidationService"

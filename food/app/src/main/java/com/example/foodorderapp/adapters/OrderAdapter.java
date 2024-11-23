@@ -9,6 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.foodorderapp.R;
 import com.example.foodorderapp.database.entities.OrderEntity;
+import com.example.foodorderapp.utils.OrderStatus;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -23,7 +24,9 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHol
     public interface OrderActionListener {
         void onAcceptOrder(OrderEntity order);
         void onPayOrder(OrderEntity order);
+        void onAssignDelivery(OrderEntity order);
         void onMarkDelivered(OrderEntity order);
+        void onCancelOrder(OrderEntity order);
     }
 
     public OrderAdapter(List<OrderEntity> orders, OrderActionListener listener, boolean isAdminView) {
@@ -61,6 +64,7 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHol
         private final TextView orderStatus;
         private final TextView orderAmount;
         private final Button actionButton;
+        private final Button secondaryButton;
 
         public OrderViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -69,6 +73,7 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHol
             orderStatus = itemView.findViewById(R.id.order_status);
             orderAmount = itemView.findViewById(R.id.order_amount);
             actionButton = itemView.findViewById(R.id.action_button);
+            secondaryButton = itemView.findViewById(R.id.secondary_button);
         }
 
         public void bind(OrderEntity order) {
@@ -78,6 +83,7 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHol
             orderAmount.setText(String.format(Locale.getDefault(), "$%.2f", order.getTotalAmount()));
 
             actionButton.setVisibility(View.VISIBLE);
+            secondaryButton.setVisibility(View.VISIBLE);
 
             if (isAdminView) {
                 setupAdminActions(order);
@@ -88,33 +94,61 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHol
 
         private void setupAdminActions(OrderEntity order) {
             switch (order.getStatus()) {
-                case "PENDING":
+                case OrderStatus.PENDING:
                     if (order.isPaid()) {
                         actionButton.setText("Accept Order");
                         actionButton.setEnabled(true);
                         actionButton.setOnClickListener(v -> listener.onAcceptOrder(order));
+
+                        secondaryButton.setText("Cancel");
+                        secondaryButton.setEnabled(true);
+                        secondaryButton.setOnClickListener(v -> listener.onCancelOrder(order));
                     } else {
                         actionButton.setText("Awaiting Payment");
                         actionButton.setEnabled(false);
+                        secondaryButton.setVisibility(View.GONE);
                     }
                     break;
-                case "ACCEPTED":
+
+                case OrderStatus.ACCEPTED:
+                    actionButton.setText("Assign Delivery");
+                    actionButton.setEnabled(true);
+                    actionButton.setOnClickListener(v -> listener.onAssignDelivery(order));
+                    secondaryButton.setVisibility(View.GONE);
+                    break;
+
+                case OrderStatus.ASSIGNED:
                     actionButton.setText("Mark Delivered");
                     actionButton.setEnabled(true);
                     actionButton.setOnClickListener(v -> listener.onMarkDelivered(order));
+                    secondaryButton.setVisibility(View.GONE);
                     break;
-                case "DELIVERED":
+
+                case OrderStatus.DELIVERED:
                     actionButton.setText("Completed");
                     actionButton.setEnabled(false);
+                    secondaryButton.setVisibility(View.GONE);
+                    break;
+
+                case OrderStatus.CANCELLED:
+                    actionButton.setText("Cancelled");
+                    actionButton.setEnabled(false);
+                    secondaryButton.setVisibility(View.GONE);
                     break;
             }
         }
 
         private void setupCustomerActions(OrderEntity order) {
-            if (!order.isPaid() && "PENDING".equals(order.getStatus())) {
+            secondaryButton.setVisibility(View.GONE);
+
+            if (!order.isPaid() && OrderStatus.PENDING.equals(order.getStatus())) {
                 actionButton.setText("Pay Now");
                 actionButton.setEnabled(true);
                 actionButton.setOnClickListener(v -> listener.onPayOrder(order));
+            } else if (OrderStatus.PENDING.equals(order.getStatus()) && !order.isPaid()) {
+                actionButton.setText("Cancel Order");
+                actionButton.setEnabled(true);
+                actionButton.setOnClickListener(v -> listener.onCancelOrder(order));
             } else {
                 actionButton.setVisibility(View.GONE);
             }

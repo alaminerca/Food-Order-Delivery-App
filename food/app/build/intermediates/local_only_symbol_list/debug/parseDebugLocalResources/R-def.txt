@@ -25,6 +25,8 @@ id add_to_cart_button
 id address_section
 id admin_bottom_navigation
 id admin_fragment_container
+id agent_details
+id agent_spinner
 id bottom_navigation
 id btn_decrease
 id btn_increase
@@ -37,6 +39,7 @@ id cart_item_quantity
 id cart_recycler_view
 id checkout_button
 id city_input
+id delivery_orders_recycler
 id email_input
 id empty_cart_text
 id fab_add_menu_item
@@ -80,15 +83,18 @@ id role_admin
 id role_customer
 id role_delivery
 id role_group
+id secondary_button
 id state_input
 id street_input
 id total_price
 id zip_input
 layout activity_admin
+layout activity_delivery
 layout activity_login
 layout activity_main
 layout activity_register
 layout dialog_add_menu_item
+layout dialog_assign_delivery
 layout fragment_cart
 layout fragment_manage_menu
 layout fragment_manage_orders

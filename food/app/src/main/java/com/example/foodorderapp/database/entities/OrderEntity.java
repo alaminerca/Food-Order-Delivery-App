@@ -7,20 +7,20 @@ import androidx.room.PrimaryKey;
 public class OrderEntity {
     @PrimaryKey(autoGenerate = true)
     private int id;
-    private int userId;  // Changed from String to int
+    private int userId;
     private double totalAmount;
     private long orderDate;
     private String status;
     private boolean isPaid;
-    private String deliveryAgentId;
+    private int deliveryAgentId;  // Consistently using int
 
-    public OrderEntity(int userId, double totalAmount, String status) {  // Changed userId to int
+    public OrderEntity(int userId, double totalAmount, String status) {
         this.userId = userId;
         this.totalAmount = totalAmount;
         this.orderDate = System.currentTimeMillis();
         this.status = status;
         this.isPaid = false;
-        this.deliveryAgentId = null;
+        this.deliveryAgentId = 0;  // Default value when no agent is assigned
     }
 
     // Getters and Setters
@@ -42,6 +42,6 @@ public class OrderEntity {
     public boolean isPaid() { return isPaid; }
     public void setPaid(boolean paid) { isPaid = paid; }
 
-    public String getDeliveryAgentId() { return deliveryAgentId; }
-    public void setDeliveryAgentId(String deliveryAgentId) { this.deliveryAgentId = deliveryAgentId; }
+    public int getDeliveryAgentId() { return deliveryAgentId; }
+    public void setDeliveryAgentId(int agentId) { this.deliveryAgentId = agentId; }
 }

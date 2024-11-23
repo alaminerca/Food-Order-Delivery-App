@@ -5,6 +5,7 @@ import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import com.example.foodorderapp.database.entities.OrderEntity;
 import com.example.foodorderapp.database.repositories.OrderRepository;
+import com.example.foodorderapp.utils.OrderStatus;
 import java.util.List;
 
 public class OrdersViewModel extends AndroidViewModel {
@@ -21,21 +22,36 @@ public class OrdersViewModel extends AndroidViewModel {
     }
 
     public void simulatePayment(int orderId, OrdersFragment.PaymentCallback callback) {
-        repository.updateOrderStatus(orderId, "PENDING", new OrderRepository.OrderCallback() {
+        // First mark the order as paid
+        repository.markOrderAsPaid(orderId, new OrderRepository.OrderCallback() {
             @Override
             public void onSuccess(int orderId) {
-                // After status update, update payment status
-                repository.markOrderAsPaid(orderId, new OrderRepository.OrderCallback() {
+                // After successful payment, update status to PENDING for admin review
+                updateOrderStatus(orderId, OrderStatus.PENDING, new OrdersFragment.OrderUpdateCallback() {
                     @Override
-                    public void onSuccess(int orderId) {
+                    public void onSuccess() {
                         callback.onSuccess();
                     }
 
                     @Override
                     public void onError(String message) {
-                        callback.onError(message);
+                        callback.onError("Status update failed: " + message);
                     }
                 });
+            }
+
+            @Override
+            public void onError(String message) {
+                callback.onError("Payment failed: " + message);
+            }
+        });
+    }
+
+    public void updateOrderStatus(int orderId, String status, OrdersFragment.OrderUpdateCallback callback) {
+        repository.updateOrderStatus(orderId, status, new OrderRepository.OrderCallback() {
+            @Override
+            public void onSuccess(int orderId) {
+                callback.onSuccess();
             }
 
             @Override

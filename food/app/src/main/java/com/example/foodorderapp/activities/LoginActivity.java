@@ -63,13 +63,19 @@ public class LoginActivity extends AppCompatActivity {
     private void handleLoginSuccess(UserEntity user) {
         Log.d(TAG, "Login success - User ID: " + user.getId() + ", Role: " + user.getRole());
         Intent intent;
-        if ("ADMIN".equals(user.getRole())) {
-            Log.d(TAG, "Starting AdminActivity");
-            intent = new Intent(this, AdminActivity.class);
-        } else {
-            Log.d(TAG, "Starting MainActivity");
-            intent = new Intent(this, MainActivity.class);
+
+        switch (user.getRole()) {
+            case "ADMIN":
+                intent = new Intent(this, AdminActivity.class);
+                break;
+            case "DELIVERY":
+                intent = new Intent(this, DeliveryActivity.class);
+                break;
+            default:
+                intent = new Intent(this, MainActivity.class);
+                break;
         }
+
         startActivity(intent);
         finish();
     }

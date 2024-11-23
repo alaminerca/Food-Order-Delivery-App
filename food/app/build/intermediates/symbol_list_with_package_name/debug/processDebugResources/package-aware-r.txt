@@ -3161,6 +3161,8 @@ id add_to_cart_button
 id address_section
 id admin_bottom_navigation
 id admin_fragment_container
+id agent_details
+id agent_spinner
 id alertTitle
 id aligned
 id all
@@ -3244,6 +3246,7 @@ id decelerate
 id decelerateAndComplete
 id decor_content_parent
 id default_activity_button
+id delivery_orders_recycler
 id deltaRelative
 id dependency_ordering
 id design_bottom_sheet
@@ -3532,6 +3535,7 @@ id search_mag_icon
 id search_plate
 id search_src_text
 id search_voice_btn
+id secondary_button
 id select_dialog_listview
 id selected
 id selection_type
@@ -3761,6 +3765,7 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_admin
+layout activity_delivery
 layout activity_login
 layout activity_main
 layout activity_register
@@ -3781,6 +3786,7 @@ layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout dialog_add_menu_item
+layout dialog_assign_delivery
 layout fragment_cart
 layout fragment_manage_menu
 layout fragment_manage_orders

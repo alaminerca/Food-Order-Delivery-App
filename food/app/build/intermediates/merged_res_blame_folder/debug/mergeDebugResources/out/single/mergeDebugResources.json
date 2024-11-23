@@ -44,10 +44,6 @@
         "source": "C:\\Users\\alami\\.gradle\\daemon\\8.7\\com.example.foodorderapp-main-39:\\layout\\item_menu.xml"
     },
     {
-        "merged": "com.example.foodorderapp-debug-37:/drawable_ic_notification.xml.flat",
-        "source": "com.example.foodorderapp-main-39:/drawable/ic_notification.xml"
-    },
-    {
         "merged": "C:\\Users\\alami\\.gradle\\daemon\\8.7\\com.example.foodorderapp-debug-37:\\drawable_ic_orders.xml.flat",
         "source": "C:\\Users\\alami\\.gradle\\daemon\\8.7\\com.example.foodorderapp-main-39:\\drawable\\ic_orders.xml"
     },
@@ -66,6 +62,10 @@
     {
         "merged": "C:\\Users\\alami\\.gradle\\daemon\\8.7\\com.example.foodorderapp-debug-37:\\layout_item_order.xml.flat",
         "source": "C:\\Users\\alami\\.gradle\\daemon\\8.7\\com.example.foodorderapp-main-39:\\layout\\item_order.xml"
+    },
+    {
+        "merged": "com.example.foodorderapp-debug-37:/layout_activity_delivery.xml.flat",
+        "source": "com.example.foodorderapp-main-39:/layout/activity_delivery.xml"
     },
     {
         "merged": "C:\\Users\\alami\\.gradle\\daemon\\8.7\\com.example.foodorderapp-debug-37:\\xml_data_extraction_rules.xml.flat",
@@ -160,6 +160,10 @@
         "source": "C:\\Users\\alami\\.gradle\\daemon\\8.7\\com.example.foodorderapp-main-39:\\mipmap-xxhdpi\\ic_launcher.webp"
     },
     {
+        "merged": "C:\\Users\\alami\\.gradle\\daemon\\8.7\\com.example.foodorderapp-debug-37:\\layout_dialog_assign_delivery.xml.flat",
+        "source": "C:\\Users\\alami\\.gradle\\daemon\\8.7\\com.example.foodorderapp-main-39:\\layout\\dialog_assign_delivery.xml"
+    },
+    {
         "merged": "C:\\Users\\alami\\.gradle\\daemon\\8.7\\com.example.foodorderapp-debug-37:\\mipmap-xhdpi_ic_launcher_round.webp.flat",
         "source": "C:\\Users\\alami\\.gradle\\daemon\\8.7\\com.example.foodorderapp-main-39:\\mipmap-xhdpi\\ic_launcher_round.webp"
     },
@@ -178,5 +182,9 @@
     {
         "merged": "C:\\Users\\alami\\.gradle\\daemon\\8.7\\com.example.foodorderapp-debug-37:\\menu_admin_bottom_navigation.xml.flat",
         "source": "C:\\Users\\alami\\.gradle\\daemon\\8.7\\com.example.foodorderapp-main-39:\\menu\\admin_bottom_navigation.xml"
+    },
+    {
+        "merged": "C:\\Users\\alami\\.gradle\\daemon\\8.7\\com.example.foodorderapp-debug-37:\\drawable_ic_notification.xml.flat",
+        "source": "C:\\Users\\alami\\.gradle\\daemon\\8.7\\com.example.foodorderapp-main-39:\\drawable\\ic_notification.xml"
     }
 ]

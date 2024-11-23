@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 import com.example.foodorderapp.R;
 import com.example.foodorderapp.database.entities.AddressEntity;
+import com.example.foodorderapp.database.entities.DeliveryAgentEntity;
 import com.example.foodorderapp.database.entities.UserEntity;
 
 public class RegisterActivity extends AppCompatActivity {
@@ -69,6 +70,7 @@ public class RegisterActivity extends AppCompatActivity {
         });
     }
 
+
     private void attemptRegistration() {
         // Get user input
         String name = nameInput.getText().toString().trim();
@@ -96,6 +98,12 @@ public class RegisterActivity extends AppCompatActivity {
         // Create user
         UserEntity user = new UserEntity(name, email, password, phone, role);
 
+        // Create DeliveryAgent if role is DELIVERY
+        DeliveryAgentEntity deliveryAgent = null;
+        if (role.equals("DELIVERY")) {
+            deliveryAgent = new DeliveryAgentEntity(name, email, phone);
+        }
+
         // Create address for customers only
         AddressEntity address = null;
         if (role.equals("CUSTOMER")) {
@@ -110,19 +118,20 @@ public class RegisterActivity extends AppCompatActivity {
             }
 
             address = new AddressEntity(
-                    0, // userId will be set after user creation
+                    0,
                     street,
                     city,
                     state,
                     zip,
                     "REGULAR",
-                    true // set as default address
+                    true
             );
         }
 
         // Register user
+        final DeliveryAgentEntity finalDeliveryAgent = deliveryAgent;
         final AddressEntity finalAddress = address;
-        viewModel.register(user, finalAddress, new RegisterViewModel.RegistrationCallback() {
+        viewModel.register(user, finalDeliveryAgent, finalAddress, new RegisterViewModel.RegistrationCallback() {
             @Override
             public void onSuccess() {
                 Toast.makeText(RegisterActivity.this,
