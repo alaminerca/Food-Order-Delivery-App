@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\alami\Desktop\JavaProjects\Food-Order-Delivery-App\food\app\src\main\AndroidManifest.xml:2:1-40:12
-INJECTED from C:\Users\alami\Desktop\JavaProjects\Food-Order-Delivery-App\food\app\src\main\AndroidManifest.xml:2:1-40:12
-INJECTED from C:\Users\alami\Desktop\JavaProjects\Food-Order-Delivery-App\food\app\src\main\AndroidManifest.xml:2:1-40:12
-INJECTED from C:\Users\alami\Desktop\JavaProjects\Food-Order-Delivery-App\food\app\src\main\AndroidManifest.xml:2:1-40:12
+ADDED from C:\Users\alami\Desktop\JavaProjects\Food-Order-Delivery-App\food\app\src\main\AndroidManifest.xml:2:1-42:12
+INJECTED from C:\Users\alami\Desktop\JavaProjects\Food-Order-Delivery-App\food\app\src\main\AndroidManifest.xml:2:1-42:12
+INJECTED from C:\Users\alami\Desktop\JavaProjects\Food-Order-Delivery-App\food\app\src\main\AndroidManifest.xml:2:1-42:12
+INJECTED from C:\Users\alami\Desktop\JavaProjects\Food-Order-Delivery-App\food\app\src\main\AndroidManifest.xml:2:1-42:12
 MERGED from [com.google.android.material:material:1.11.0] C:\Users\alami\.gradle\caches\transforms-4\e3e5b3470aa3e364250c07af7b8be89b\transformed\material-1.11.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\alami\.gradle\caches\transforms-4\5985c5af3da74b285998d90c9ba4ff3a\transformed\constraintlayout-2.1.4\AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.appcompat:appcompat-resources:1.6.1] C:\Users\alami\.gradle\caches\transforms-4\d5953318e8750608e7bc25225fcb953b\transformed\appcompat-resources-1.6.1\AndroidManifest.xml:17:1-22:12
@@ -67,8 +67,8 @@ ADDED from C:\Users\alami\Desktop\JavaProjects\Food-Order-Delivery-App\food\app\
 	android:name
 		ADDED from C:\Users\alami\Desktop\JavaProjects\Food-Order-Delivery-App\food\app\src\main\AndroidManifest.xml:5:22-74
 application
-ADDED from C:\Users\alami\Desktop\JavaProjects\Food-Order-Delivery-App\food\app\src\main\AndroidManifest.xml:7:5-39:19
-INJECTED from C:\Users\alami\Desktop\JavaProjects\Food-Order-Delivery-App\food\app\src\main\AndroidManifest.xml:7:5-39:19
+ADDED from C:\Users\alami\Desktop\JavaProjects\Food-Order-Delivery-App\food\app\src\main\AndroidManifest.xml:7:5-41:19
+INJECTED from C:\Users\alami\Desktop\JavaProjects\Food-Order-Delivery-App\food\app\src\main\AndroidManifest.xml:7:5-41:19
 MERGED from [com.google.android.material:material:1.11.0] C:\Users\alami\.gradle\caches\transforms-4\e3e5b3470aa3e364250c07af7b8be89b\transformed\material-1.11.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.11.0] C:\Users\alami\.gradle\caches\transforms-4\e3e5b3470aa3e364250c07af7b8be89b\transformed\material-1.11.0\AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\alami\.gradle\caches\transforms-4\5985c5af3da74b285998d90c9ba4ff3a\transformed\constraintlayout-2.1.4\AndroidManifest.xml:9:5-20

@@ -16,6 +16,9 @@ public class OrderStatus {
     // Order was cancelled
     public static final String CANCELLED = "CANCELLED";
 
+    // order in out for delivery
+    public static final String DELIVERING = "DELIVERING";  // New status
+
     // Private constructor to prevent instantiation
     private OrderStatus() {}
 }

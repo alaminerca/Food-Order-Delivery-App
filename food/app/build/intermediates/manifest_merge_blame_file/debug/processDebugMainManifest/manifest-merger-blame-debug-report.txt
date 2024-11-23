@@ -24,7 +24,7 @@
 17-->[androidx.core:core:1.9.0] C:\Users\alami\.gradle\caches\transforms-4\ad7c6790a1c2eb35680a21a9545466d9\transformed\core-1.9.0\AndroidManifest.xml:26:22-94
 18
 19    <application
-19-->C:\Users\alami\Desktop\JavaProjects\Food-Order-Delivery-App\food\app\src\main\AndroidManifest.xml:7:5-39:19
+19-->C:\Users\alami\Desktop\JavaProjects\Food-Order-Delivery-App\food\app\src\main\AndroidManifest.xml:7:5-41:19
 20        android:name="com.example.foodorderapp.FoodOrderApp"
 20-->C:\Users\alami\Desktop\JavaProjects\Food-Order-Delivery-App\food\app\src\main\AndroidManifest.xml:8:9-37
 21        android:allowBackup="true"

@@ -2993,9 +2993,11 @@ drawable ic_clear_black_24
 drawable ic_clock_black_24dp
 drawable ic_delete
 drawable ic_edit
+drawable ic_help
 drawable ic_keyboard_black_24dp
 drawable ic_launcher_background
 drawable ic_launcher_foreground
+drawable ic_logout
 drawable ic_m3_chip_check
 drawable ic_m3_chip_checked_circle
 drawable ic_m3_chip_close
@@ -3246,6 +3248,12 @@ id decelerate
 id decelerateAndComplete
 id decor_content_parent
 id default_activity_button
+id delivery_action_button
+id delivery_details_button
+id delivery_order_amount
+id delivery_order_date
+id delivery_order_id
+id delivery_order_status
 id delivery_orders_recycler
 id deltaRelative
 id dependency_ordering
@@ -3281,6 +3289,7 @@ id elastic
 id email_input
 id embed
 id empty_cart_text
+id empty_view
 id end
 id endToStart
 id enterAlways
@@ -3387,10 +3396,12 @@ id material_timepicker_ok_button
 id material_timepicker_view
 id material_value_index
 id matrix
+id menu_help
 id menu_item_description
 id menu_item_name
 id menu_item_price
 id menu_items_recycler
+id menu_logout
 id menu_recycler_view
 id message
 id middle
@@ -3794,6 +3805,7 @@ layout fragment_manage_users
 layout fragment_menu
 layout fragment_orders
 layout item_cart
+layout item_delivery_order
 layout item_manage_menu
 layout item_manage_order
 layout item_menu
@@ -3861,6 +3873,7 @@ layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
 menu admin_bottom_navigation
 menu bottom_navigation_menu
+menu options_menu
 mipmap ic_launcher
 mipmap ic_launcher_round
 plurals mtrl_badge_content_description

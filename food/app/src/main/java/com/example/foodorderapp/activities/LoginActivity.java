@@ -1,6 +1,7 @@
 package com.example.foodorderapp.activities;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
@@ -64,16 +65,19 @@ public class LoginActivity extends AppCompatActivity {
         Log.d(TAG, "Login success - User ID: " + user.getId() + ", Role: " + user.getRole());
         Intent intent;
 
-        switch (user.getRole()) {
-            case "ADMIN":
-                intent = new Intent(this, AdminActivity.class);
-                break;
-            case "DELIVERY":
-                intent = new Intent(this, DeliveryActivity.class);
-                break;
-            default:
-                intent = new Intent(this, MainActivity.class);
-                break;
+        if ("DELIVERY".equals(user.getRole())) {
+            // Save delivery agent info
+            SharedPreferences.Editor editor = getSharedPreferences("delivery_prefs", MODE_PRIVATE).edit();
+            editor.putInt("agent_id", user.getId());
+            editor.putString("agent_email", user.getEmail());
+            editor.apply();
+
+            Log.d(TAG, "Saved delivery agent ID: " + user.getId() + " and email: " + user.getEmail());
+            intent = new Intent(this, DeliveryActivity.class);
+        } else if ("ADMIN".equals(user.getRole())) {
+            intent = new Intent(this, AdminActivity.class);
+        } else {
+            intent = new Intent(this, MainActivity.class);
         }
 
         startActivity(intent);

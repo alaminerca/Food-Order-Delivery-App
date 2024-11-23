@@ -36,5 +36,7 @@
 
         <activity android:name=".activities.DeliveryActivity"
             android:exported="false" />
+
+
     </application>
 </manifest>
