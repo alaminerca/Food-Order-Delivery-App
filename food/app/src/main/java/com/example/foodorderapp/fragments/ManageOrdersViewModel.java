@@ -29,11 +29,9 @@ public class ManageOrdersViewModel extends AndroidViewModel {
     }
 
     public void assignDeliveryAgent(int orderId, int agentId, ManageOrdersFragment.OrderUpdateCallback callback) {
-        // First update agent availability
         deliveryAgentRepository.updateAgentAvailability(agentId, false, new DeliveryAgentRepository.OnAgentCallback() {
             @Override
             public void onSuccess(int agentId) {
-                // Then update order status and assign agent
                 orderRepository.assignDeliveryAgent(orderId, agentId, new OrderRepository.OrderCallback() {
                     @Override
                     public void onSuccess(int orderId) {
@@ -42,13 +40,13 @@ public class ManageOrdersViewModel extends AndroidViewModel {
 
                     @Override
                     public void onError(String message) {
-                        // If order update fails, revert agent availability
-                        deliveryAgentRepository.updateAgentAvailability(agentId, true, new DeliveryAgentRepository.OnAgentCallback() {
-                            @Override
-                            public void onSuccess(int id) {}
-                            @Override
-                            public void onError(String error) {}
-                        });
+                        deliveryAgentRepository.updateAgentAvailability(agentId, true,
+                                new DeliveryAgentRepository.OnAgentCallback() {
+                                    @Override
+                                    public void onSuccess(int id) {}
+                                    @Override
+                                    public void onError(String error) {}
+                                });
                         callback.onError(message);
                     }
                 });
@@ -62,34 +60,29 @@ public class ManageOrdersViewModel extends AndroidViewModel {
     }
 
     public void markDelivered(int orderId, ManageOrdersFragment.OrderUpdateCallback callback) {
-        orderRepository.updateOrderStatus(orderId, OrderStatus.DELIVERED, new OrderRepository.OrderCallback() {
+        // Get the order first to find the agent
+        orderRepository.getOrderById(orderId, new OrderRepository.OrderCallback() {
             @Override
-            public void onSuccess(int orderId) {
-                // Make agent available again after delivery
-                orderRepository.getOrderById(orderId, new OrderRepository.OrderCallback() {
-                    @Override
-                    public void onSuccess(int agentId) {
-                        deliveryAgentRepository.updateAgentAvailability(agentId, true, new DeliveryAgentRepository.OnAgentCallback() {
+            public void onSuccess(int agentId) {
+                // Make agent available again
+                deliveryAgentRepository.updateAgentAvailability(agentId, true,
+                        new DeliveryAgentRepository.OnAgentCallback() {
                             @Override
                             public void onSuccess(int id) {
-                                callback.onSuccess();
+                                // Update order status
+                                updateOrderStatus(orderId, OrderStatus.DELIVERED, callback);
                             }
+
                             @Override
-                            public void onError(String error) {
-                                callback.onError("Delivered but failed to update agent status: " + error);
+                            public void onError(String message) {
+                                callback.onError("Failed to update agent availability: " + message);
                             }
                         });
-                    }
-                    @Override
-                    public void onError(String message) {
-                        callback.onError(message);
-                    }
-                });
             }
 
             @Override
             public void onError(String message) {
-                callback.onError(message);
+                callback.onError("Failed to get order details: " + message);
             }
         });
     }

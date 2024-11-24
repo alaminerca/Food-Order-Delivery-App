@@ -2987,6 +2987,7 @@ drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
 drawable ic_add
+drawable ic_app_logo
 drawable ic_arrow_back_black_24
 drawable ic_cart
 drawable ic_clear_black_24
@@ -3163,6 +3164,7 @@ id add_to_cart_button
 id address_section
 id admin_bottom_navigation
 id admin_fragment_container
+id admin_toolbar
 id agent_details
 id agent_spinner
 id alertTitle
@@ -3255,6 +3257,7 @@ id delivery_order_date
 id delivery_order_id
 id delivery_order_status
 id delivery_orders_recycler
+id delivery_toolbar
 id deltaRelative
 id dependency_ordering
 id design_bottom_sheet
@@ -3567,6 +3570,7 @@ id snapMargins
 id south
 id spacer
 id special_effects_controller_view_tag
+id splash_logo
 id spline
 id split_action_bar
 id spread
@@ -3625,6 +3629,7 @@ id title
 id titleDividerNoCustom
 id title_template
 id toggle
+id toolbar
 id top
 id topPanel
 id total_price
@@ -3780,6 +3785,7 @@ layout activity_delivery
 layout activity_login
 layout activity_main
 layout activity_register
+layout activity_splash
 layout custom_dialog
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
@@ -3875,6 +3881,7 @@ menu admin_bottom_navigation
 menu bottom_navigation_menu
 menu options_menu
 mipmap ic_launcher
+mipmap ic_launcher_foreground
 mipmap ic_launcher_round
 plurals mtrl_badge_content_description
 string abc_action_bar_home_description

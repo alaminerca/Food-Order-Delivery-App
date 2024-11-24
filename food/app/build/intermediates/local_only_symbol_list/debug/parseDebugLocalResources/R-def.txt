@@ -8,6 +8,7 @@ color teal_200
 color teal_700
 color white
 drawable ic_add
+drawable ic_app_logo
 drawable ic_cart
 drawable ic_delete
 drawable ic_edit
@@ -27,6 +28,7 @@ id add_to_cart_button
 id address_section
 id admin_bottom_navigation
 id admin_fragment_container
+id admin_toolbar
 id agent_details
 id agent_spinner
 id bottom_navigation
@@ -48,6 +50,7 @@ id delivery_order_date
 id delivery_order_id
 id delivery_order_status
 id delivery_orders_recycler
+id delivery_toolbar
 id email_input
 id empty_cart_text
 id empty_view
@@ -95,8 +98,10 @@ id role_customer
 id role_delivery
 id role_group
 id secondary_button
+id splash_logo
 id state_input
 id street_input
+id toolbar
 id total_price
 id zip_input
 layout activity_admin
@@ -104,6 +109,7 @@ layout activity_delivery
 layout activity_login
 layout activity_main
 layout activity_register
+layout activity_splash
 layout dialog_add_menu_item
 layout dialog_assign_delivery
 layout fragment_cart
@@ -122,6 +128,7 @@ menu admin_bottom_navigation
 menu bottom_navigation_menu
 menu options_menu
 mipmap ic_launcher
+mipmap ic_launcher_foreground
 mipmap ic_launcher_round
 string app_name
 style Base.Theme.FoodOrderApp

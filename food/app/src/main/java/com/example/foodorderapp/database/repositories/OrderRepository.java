@@ -8,6 +8,8 @@ import androidx.lifecycle.LiveData;
 import com.example.foodorderapp.database.AppDatabase;
 import com.example.foodorderapp.database.DAO.OrderDAO;
 import com.example.foodorderapp.database.entities.OrderEntity;
+import com.example.foodorderapp.utils.OrderNotificationService;
+import android.content.Context;
 import com.example.foodorderapp.utils.OrderStatus;
 import java.util.List;
 import java.util.concurrent.ExecutorService;
@@ -18,13 +20,16 @@ public class OrderRepository {
     private final OrderDAO orderDAO;
     private final ExecutorService executorService;
     private final Handler mainHandler;
+    private final OrderNotificationService notificationService;  // Add this field
+    private final Context context;  // Add this field
 
     public OrderRepository(Application application) {
         AppDatabase database = AppDatabase.getInstance(application);
         orderDAO = database.orderDAO();
         executorService = Executors.newSingleThreadExecutor();
         mainHandler = new Handler(Looper.getMainLooper());
-        Log.d(TAG, "OrderRepository initialized");
+        context = application.getApplicationContext();  // Store context
+        notificationService = new OrderNotificationService(context);  // Initialize notification service
     }
 
     public void createOrder(OrderEntity order, OrderCallback callback) {
@@ -75,7 +80,15 @@ public class OrderRepository {
         executorService.execute(() -> {
             try {
                 orderDAO.updateOrderStatus(orderId, status);
-                Log.d(TAG, "Order status updated successfully");
+                // Get user ID for the order to check if it's a customer order
+                OrderEntity order = orderDAO.getOrderById(orderId);
+                if (order != null) {
+                    // Send notification
+                    mainHandler.post(() -> {
+                        Log.d(TAG, "Sending notification for order: " + orderId);
+                        notificationService.showOrderStatusNotification(orderId, status);
+                    });
+                }
                 mainHandler.post(() -> callback.onSuccess(orderId));
             } catch (Exception e) {
                 Log.e(TAG, "Error updating order status: " + e.getMessage());
@@ -88,6 +101,7 @@ public class OrderRepository {
         Log.d(TAG, "Assigning order " + orderId + " to agent " + agentId);
         executorService.execute(() -> {
             try {
+                // Update order with agent ID and status
                 orderDAO.assignDeliveryAgent(orderId, agentId);
                 orderDAO.updateOrderStatus(orderId, OrderStatus.ASSIGNED);
                 Log.d(TAG, "Successfully assigned order " + orderId + " to agent " + agentId);
@@ -98,6 +112,8 @@ public class OrderRepository {
             }
         });
     }
+
+
 
     public void markOrderAsPaid(int orderId, OrderCallback callback) {
         Log.d(TAG, "Marking order as paid: " + orderId);
@@ -114,7 +130,7 @@ public class OrderRepository {
     }
 
     public LiveData<List<OrderEntity>> getAgentActiveOrders(int agentId) {
-        Log.d(TAG, "Fetching active orders for agent ID: " + agentId);
+        Log.d(TAG, "Getting active orders for agent: " + agentId);
         return orderDAO.getAgentActiveOrders(agentId);
     }
 
@@ -122,4 +138,6 @@ public class OrderRepository {
         void onSuccess(int orderId);
         void onError(String message);
     }
+
+
 }

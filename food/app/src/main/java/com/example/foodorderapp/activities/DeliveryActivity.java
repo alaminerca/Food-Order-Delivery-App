@@ -33,6 +33,8 @@ public class DeliveryActivity extends AppCompatActivity implements DeliveryOrder
         setContentView(R.layout.activity_delivery);
         Log.d(TAG, "onCreate called");
 
+        setSupportActionBar(findViewById(R.id.delivery_toolbar));
+
         setupRecyclerView();
         setupViewModel();
     }
@@ -55,7 +57,7 @@ public class DeliveryActivity extends AppCompatActivity implements DeliveryOrder
 
         if (ordersLiveData == null) {
             Toast.makeText(this, "Error: Delivery agent not found", Toast.LENGTH_LONG).show();
-            finish(); // Return to previous screen
+            finish();
             return;
         }
 
@@ -68,6 +70,42 @@ public class DeliveryActivity extends AppCompatActivity implements DeliveryOrder
                 findViewById(R.id.empty_view).setVisibility(View.VISIBLE);
             }
         });
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.options_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int itemId = item.getItemId();
+        if (itemId == R.id.menu_logout) {
+            // Clear preferences
+            getSharedPreferences("delivery_prefs", MODE_PRIVATE)
+                    .edit()
+                    .clear()
+                    .apply();
+            // Return to login
+            Intent intent = new Intent(this, LoginActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(intent);
+            return true;
+        }
+        else if (itemId == R.id.menu_help) {
+            showHelpDialog();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    private void showHelpDialog() {
+        new AlertDialog.Builder(this)
+                .setTitle("Delivery Help")
+                .setMessage("Delivery Support:\nEmail: delivery@foodorder.com\nPhone: +1234567890")
+                .setPositiveButton("OK", null)
+                .show();
     }
 
     @Override
@@ -84,7 +122,8 @@ public class DeliveryActivity extends AppCompatActivity implements DeliveryOrder
 
                         @Override
                         public void onError(String message) {
-                            Toast.makeText(DeliveryActivity.this, "Failed to update status: " + message, Toast.LENGTH_SHORT).show();
+                            Toast.makeText(DeliveryActivity.this, "Failed to update status: " + message,
+                                    Toast.LENGTH_SHORT).show();
                         }
                     });
                 })
@@ -101,12 +140,14 @@ public class DeliveryActivity extends AppCompatActivity implements DeliveryOrder
                     viewModel.updateOrderStatus(order.getId(), OrderStatus.DELIVERED, new OrderRepository.OrderCallback() {
                         @Override
                         public void onSuccess(int orderId) {
-                            Toast.makeText(DeliveryActivity.this, "Order marked as delivered", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(DeliveryActivity.this, "Order marked as delivered",
+                                    Toast.LENGTH_SHORT).show();
                         }
 
                         @Override
                         public void onError(String message) {
-                            Toast.makeText(DeliveryActivity.this, "Failed to update status: " + message, Toast.LENGTH_SHORT).show();
+                            Toast.makeText(DeliveryActivity.this, "Failed to update status: " + message,
+                                    Toast.LENGTH_SHORT).show();
                         }
                     });
                 })
@@ -121,38 +162,6 @@ public class DeliveryActivity extends AppCompatActivity implements DeliveryOrder
                 .setMessage("Order #" + order.getId() + "\n" +
                         "Status: " + order.getStatus() + "\n" +
                         "Amount: $" + order.getTotalAmount())
-                .setPositiveButton("OK", null)
-                .show();
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.options_menu, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-        if (id == R.id.menu_logout) {
-            // Clear any stored preferences
-            getSharedPreferences("delivery_prefs", MODE_PRIVATE).edit().clear().apply();
-            // Return to login
-            Intent intent = new Intent(this, LoginActivity.class);
-            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-            startActivity(intent);
-            return true;
-        } else if (id == R.id.menu_help) {
-            showHelpDialog();
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
-
-    private void showHelpDialog() {
-        new AlertDialog.Builder(this)
-                .setTitle("Help")
-                .setMessage("Contact support at:\nEmail: support@foodorder.com\nPhone: +1234567890")
                 .setPositiveButton("OK", null)
                 .show();
     }

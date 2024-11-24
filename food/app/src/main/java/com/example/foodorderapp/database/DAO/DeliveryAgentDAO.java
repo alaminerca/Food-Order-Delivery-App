@@ -20,11 +20,11 @@ public interface DeliveryAgentDAO {
     LiveData<List<DeliveryAgentEntity>> getAvailableAgents();
 
     @Query("SELECT * FROM delivery_agents WHERE id = :agentId")
-    LiveData<DeliveryAgentEntity> getAgentById(int agentId);
-
-    @Query("UPDATE delivery_agents SET isAvailable = :isAvailable WHERE id = :agentId")
-    void updateAgentAvailability(int agentId, boolean isAvailable);
+    DeliveryAgentEntity getAgentById(int agentId);
 
     @Query("SELECT * FROM delivery_agents WHERE email = :email")
     DeliveryAgentEntity getAgentByEmail(String email);
+
+    @Query("UPDATE delivery_agents SET isAvailable = :isAvailable WHERE id = :agentId")
+    void updateAgentAvailability(int agentId, boolean isAvailable);
 }
