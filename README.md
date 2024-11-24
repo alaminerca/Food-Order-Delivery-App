@@ -44,7 +44,7 @@ A comprehensive food ordering and delivery management system built with Android 
 ### Delivery Agent Interface
 | Active Orders | Delivery Status |
 |--------------|----------------|
-| ![Delivery List](https://github.com/alaminerca/Food-Order-Delivery-App/blob/main/screenshots/activeDeliveries.jpg) | ![Delivery Status](https://github.com/alaminerca/Food-Order-Delivery-App/blob/main/screenshots/deliveryStatus.jpg) |
+| ![Delivery List]([https://github.com/alaminerca/Food-Order-Delivery-App/blob/main/screenshots/activeDeliveries.jpg](https://github.com/alaminerca/Food-Order-Delivery-App/blob/main/screenshoots/activeDeliveries.jpg)) | ![Delivery Status](https://github.com/alaminerca/Food-Order-Delivery-App/blob/main/screenshots/deliveryStatus.jpg) |
 
 ## Technologies Used
 - Android SDK
