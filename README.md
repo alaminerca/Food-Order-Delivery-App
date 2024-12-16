@@ -29,22 +29,22 @@ A comprehensive food ordering and delivery management system built with Android 
 ### Authentication
 | Login Screen | Registration Screen |
 |--------------|-------------------|
-| ![Login](https://github.com/alaminerca/Food-Order-Delivery-App/blob/main/screenshots/login.jpg) | ![Register](https://github.com/alaminerca/Food-Order-Delivery-App/blob/main/screenshots/registration.jpg) |
+|![Login](https://github.com/alaminerca/Food-Order-Delivery-App/tree/main/screenshoots/login.jpg) | ![Register](https://github.com/alaminerca/Food-Order-Delivery-App/tree/main/screenshoots/registration.jpg) |
 
 ### Customer Views
 | Menu Screen | Cart Screen | Order Tracking |
 |-------------|-------------|----------------|
-| ![Menu](https://github.com/alaminerca/Food-Order-Delivery-App/blob/main/screenshots/customerMenu.jpg) | ![Menu](https://github.com/alaminerca/Food-Order-Delivery-App/blob/main/screenshots/customerMenu.jpg) | ![Cart](https://github.com/alaminerca/Food-Order-Delivery-App/blob/main/screenshots/customerCart.jpg) |
+| ![Menu](https://github.com/alaminerca/Food-Order-Delivery-App/tree/main/screenshoots/customerMenu.jpg) | ![Menu](https://github.com/alaminerca/Food-Order-Delivery-App/tree/main/screenshoots/customerMenu.jpg) | ![Cart](https://github.com/alaminerca/Food-Order-Delivery-App/tree/main/screenshoots/customerCart.jpg) |
 
 ### Admin Dashboard
 | Menu Management | Order Management |
 |----------------|------------------|
-| ![Admin Menu](https://github.com/alaminerca/Food-Order-Delivery-App/blob/main/screenshots/adminMenuManage.jpg) | ![Admin Orders](https://github.com/alaminerca/Food-Order-Delivery-App/blob/main/screenshots/adminOrderManage.jpg) |
+| ![Admin Menu](https://github.com/alaminerca/Food-Order-Delivery-App/tree/main/screenshoots/adminMenuManage.jpg) | ![Admin Orders](https://github.com/alaminerca/Food-Order-Delivery-App/tree/main/screenshoots/adminOrderManage.jpg) |
 
 ### Delivery Agent Interface
 | Active Orders | Delivery Status |
 |--------------|----------------|
-| ![Delivery List](https://github.com/alaminerca/Food-Order-Delivery-App/blob/main/screenshots/activeDeliveries.jpg) | ![Delivery Status](https://github.com/alaminerca/Food-Order-Delivery-App/blob/main/screenshots/deliveryStatus.jpg) |
+| ![Delivery List](https://github.com/alaminerca/Food-Order-Delivery-App/tree/main/screenshoots/activeDeliveries.jpg) | ![Delivery Status](https://github.com/alaminerca/Food-Order-Delivery-App/tree/main/screenshoots/deliveryStatus.jpg) |
 
 ## Technologies Used
 - Android SDK
